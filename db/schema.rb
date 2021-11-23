@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 2021_11_23_121154) do
   end
 
   create_table "recipe_ingredients", force: :cascade do |t|
-    t.bigint "recipe_id", null: false
-    t.bigint "ingredient_id", null: false
+    t.bigint "recipes_id", null: false
+    t.bigint "ingredients_id", null: false
     t.integer "quantity"
     t.string "unit"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["ingredient_id"], name: "index_recipe_ingredients_on_ingredient_id"
-    t.index ["recipe_id"], name: "index_recipe_ingredients_on_recipe_id"
+    t.index ["ingredients_id"], name: "index_recipe_ingredients_on_ingredients_id"
+    t.index ["recipes_id"], name: "index_recipe_ingredients_on_recipes_id"
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -44,14 +44,14 @@ ActiveRecord::Schema.define(version: 2021_11_23_121154) do
   end
 
   create_table "saved_recipes", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "recipe_id", null: false
+    t.bigint "users_id", null: false
+    t.bigint "recipes_id", null: false
     t.boolean "favourite", default: false
     t.boolean "completed", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["recipe_id"], name: "index_saved_recipes_on_recipe_id"
-    t.index ["user_id"], name: "index_saved_recipes_on_user_id"
+    t.index ["recipes_id"], name: "index_saved_recipes_on_recipes_id"
+    t.index ["users_id"], name: "index_saved_recipes_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 2021_11_23_121154) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "recipe_ingredients", "ingredients"
-  add_foreign_key "recipe_ingredients", "recipes"
-  add_foreign_key "saved_recipes", "recipes"
-  add_foreign_key "saved_recipes", "users"
+  add_foreign_key "recipe_ingredients", "ingredients", column: "ingredients_id"
+  add_foreign_key "recipe_ingredients", "recipes", column: "recipes_id"
+  add_foreign_key "saved_recipes", "recipes", column: "recipes_id"
+  add_foreign_key "saved_recipes", "users", column: "users_id"
 end
