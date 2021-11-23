@@ -1,31 +1,33 @@
 <div class="recipe-card">
   <div class="card-img">
-    <img src="https://source.unsplash.com/random"/>
+    <%= link_to recipe_path(@recipe) do %>
+      <img src="https://source.unsplash.com/random"/>
+    <% end %>
   </div>
   <div class="card-content">
     <h2 class="recipe-title">Recipe title</h2>
     <hr>
     <div class="recipe-details">
       <div class="recipe-details-item time">
-        <p class="values">
+        <div class="values">
           <ion-icon name="time-outline"></ion-icon>
           <span class="value">20</span>
-        </p>
-        <p class="title">Minutes</p>
+        </div>
+        <div class="title">Minutes</div>
       </div>
       <div class="recipe-details-item ingredients">
-        <p class="values">
+        <div class="values">
           <ion-icon name="book-outline"></ion-icon>
           <span class="value">5</span>
-        </p>
-        <p class="title">Ingredients</p>
+        </div>
+        <div class="title">Ingredients</div>
       </div>
       <div class="recipe-details-item servings">
-        <p class="values">
+        <div class="values">
           <ion-icon name="people-outline"></ion-icon>
           <span class="value">4-6</span>
-        </p>
-        <p class="title">Serving</p>
+        </div>
+        <div class="title">Serving</div>
       </div>
     </div>
   </div>
