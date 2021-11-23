@@ -3,4 +3,8 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def search
+    @ingredients = Ingredient.all
+  end
 end
