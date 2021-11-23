@@ -1,0 +1,14 @@
+.button {
+  padding: 10px 15px;
+  background-color: $green;
+  color: white;
+  transition: 2ms;
+  border-radius: 2px;
+  margin: 10px;
+}
+
+.button:hover {
+  text-decoration: none;
+  color: white;
+  background-color: $dark-green;
+}
