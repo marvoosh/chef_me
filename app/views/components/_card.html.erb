@@ -1,17 +1,17 @@
 <div class="recipe-card">
   <div class="card-img">
-    <%= link_to recipe_path(@recipe) do %>
+    <%= link_to recipe_path(recipe) do %>
       <img src="https://source.unsplash.com/random"/>
     <% end %>
   </div>
   <div class="card-content">
-    <h2 class="recipe-title">Recipe title</h2>
+    <h2 class="recipe-title"><%= recipe.name %></h2>
     <hr>
     <div class="recipe-details">
       <div class="recipe-details-item time">
         <div class="values">
           <ion-icon name="time-outline"></ion-icon>
-          <span class="value">20</span>
+          <span class="value"><%= recipe.cook_time %></span>
         </div>
         <div class="title">Minutes</div>
       </div>
@@ -25,7 +25,7 @@
       <div class="recipe-details-item servings">
         <div class="values">
           <ion-icon name="people-outline"></ion-icon>
-          <span class="value">4-6</span>
+          <span class="value"><%= recipe.servings %></span>
         </div>
         <div class="title">Serving</div>
       </div>
