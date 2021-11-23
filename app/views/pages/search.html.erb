@@ -11,3 +11,8 @@
   <%= submit_tag "Search", class: "button" %>
 <% end %>
 </div>
+<div>
+  <% @ingredients.each do |ingredient| %>
+    <p><%= ingredient.name %></p>
+  <% end %>
+</div>
