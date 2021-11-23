@@ -6,5 +6,7 @@ class PagesController < ApplicationController
 
   def search
     @ingredients = Ingredient.all
+    # if params[:query].present?
+    #   @ingredients =
   end
 end
