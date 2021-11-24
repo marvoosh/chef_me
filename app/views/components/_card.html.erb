@@ -1,5 +1,6 @@
 <div class="recipe-card">
   <div class="card-img">
+    <ion-icon class ='saved' name="bookmark-outline"></ion-icon>
     <%= link_to recipe_path(recipe) do %>
       <img src="<%= recipe.image_url %>"/>
     <% end %>
