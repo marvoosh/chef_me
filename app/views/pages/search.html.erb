@@ -3,16 +3,16 @@
 </div>
 <div>
   <%= form_tag search_path, method: :get do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Search for an ingredient"
-  %>
-  <%= submit_tag "Search", class: "button" %>
-<% end %>
-</div>
-<div>
-  <% @ingredients.each do |ingredient| %>
-    <p><%= ingredient.name %></p>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search for an ingredient"
+    %>
+    <%= submit_tag "Search", class: "button" %>
   <% end %>
+  <div>
+    <%# <% @ingredients.each do |ingredient| %>
+      <p><%#= ingredient.name %></p>
+    <%# end %>
+  </div>
 </div>
