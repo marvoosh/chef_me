@@ -1,5 +1,12 @@
-<h1>Top results</h1>
 
+<div class="search-form">
+  <%= simple_form_for recipes_path do |f| %>
+    <%= f.input :ingredient, placeholder: 'Search by ingredients', label: false %>
+    <%= f.button :submit, 'Find recipes', class: 'button' %>
+  <% end %>
+</div>
+
+<h1>Top results</h1>
 <% @recipes.each do |recipe| %>
   <div class="recipe-cards-container">
     <%= render 'components/card', recipe: recipe %>
