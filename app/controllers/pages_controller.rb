@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def index
-    @saved_recipes = SavedRecipe.all
+    @recipes = current_user.recipes
   end
 
   def search

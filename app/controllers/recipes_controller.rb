@@ -1,8 +1,8 @@
 class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
-    @ingredients = ingredients_collection
-    @ingredient_ids = params[:query][:ingredient_ids]
+    # @ingredients = ingredients_collection
+    # @ingredient_ids = params[:query][:ingredient_ids]
   end
 
   def show
