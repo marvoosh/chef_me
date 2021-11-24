@@ -24,11 +24,17 @@ black_pepper = Ingredient.create(name: 'black pepper')
 sesame = Ingredient.create(name: 'sesame seeds')
 avocado = Ingredient.create(name: 'avocado')
 cucamber = Ingredient.create(name: 'cucumber')
+
+zucchini = Ingredient.create(name: 'zucchini')
+somen = Ingredient.create(name: 'somen noodles')
+onion = Ingredient.create(name: 'onion')
+sugar = Ingredient.create(name: 'sugar')
+chili_oil = Ingredient.create(name: 'chili oil')
 puts 'Ingrideients finished'
 
 puts 'Creating recipes'
 mayak_avocado = Recipe.create(
-  name: 'mayak avocado',
+  name: 'Mayak Avocado',
   cook_time: 20,
   servings: 4,
   cuisine: 'Korean',
@@ -36,9 +42,61 @@ mayak_avocado = Recipe.create(
   description: 'Mayak Avocado, Korean Marinated Avocado Recipe! This simple,\neasy & quick avocado recipe will change your life!',
   instructions: '1.Combine chopped garlic, chili, green onion, lemon juice, soy sauce, water, agave nectar, black pepper, and sesame seeds in a large airtight container. Give a good mix.\n2.Cut firm avocado lengthwise around the seed. Open and remove pits from avocados. Cut them into quarters, and carefully peel. Cut avocados into large chunks and add into marinate sauce. Add your choice of diced cucumber or cherry tomatoes.\nCarefully cover avocado chunks with marinating, be gentle because avocados are easy to break down. You can serve immediately or cover and marinate for 30 minutes before serving. You can serve by itself as a snack/appetizer, pair with crackers, make avocado toast or serve with warm cooked rice. Enjoy!'
 )
+zucchini_noodles = Recipe.create(
+  name: 'Zucchini Noodles',
+  cook_time: 10,
+  servings: 3,
+  cuisine: 'Asian',
+  image_url: 'https://i1.wp.com/photos.smugmug.com/Zucchini-Noodles/i-gwk2BTV/0/01630733/X3/840A8976-X3.jpg?resize=800%2C1200&ssl=1',
+  description: 'Easy Zucchini Noodles Recipe!',
+  instructions: '1.Bring a large pot of water to a boil, cook somen by following directions of package you’re using. When somen has 1 minute to finish, add zucchini & onion into pot and boil it together.\n2.Drain and rinse under cold water. Drain completely and place in a large mixing bowl. Add soy sauce, nectar, and chili oil then mix well. Garnish with sesame seeds and enjoy!'
+)
 puts 'Recipes finished'
 
 puts 'Creating recipe_ingridients'
+RecipeIngredient.create(
+  recipe_id: zucchini_noodles.id,
+  ingredient_id: zucchini.id,
+  quantity: 1,
+  unit: 'sliced'
+)
+RecipeIngredient.create(
+  recipe_id: zucchini_noodles.id,
+  ingredient_id: somen.id,
+  quantity: 3,
+  unit: 'units'
+)
+RecipeIngredient.create(
+  recipe_id: zucchini_noodles.id,
+  ingredient_id: onion.id,
+  quantity: 0.5,
+  unit: 'sliced'
+)
+RecipeIngredient.create(
+  recipe_id: zucchini_noodles.id,
+  ingredient_id: soy.id,
+  quantity: 4,
+  unit: 'tbsp'
+)
+RecipeIngredient.create(
+  recipe_id: zucchini_noodles.id,
+  ingredient_id: sugar.id,
+  quantity: 2,
+  unit: 'tbsp'
+)
+RecipeIngredient.create(
+  recipe_id: zucchini_noodles.id,
+  ingredient_id: chili_oil.id,
+  quantity: 3,
+  unit: 'tbsp'
+)
+RecipeIngredient.create(
+  recipe_id: zucchini_noodles.id,
+  ingredient_id: sesame.id,
+  quantity: 1,
+  unit: 'tsp'
+)
+
 RecipeIngredient.create(
   recipe_id: mayak_avocado.id,
   ingredient_id: garlic.id,
