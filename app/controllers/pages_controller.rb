@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   end
 
   def search
-    @ingredients = Ingredient.all
+    if params[:query].present?
+      @ingredients = Ingredient.search_by_name(params[:query])
+    else
+      @ingredients = Ingredient.all
+    end
   end
 end
