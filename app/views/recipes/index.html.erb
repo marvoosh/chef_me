@@ -1,4 +1,3 @@
-
 <div class="search-form">
   <%= simple_form_for :query, url: recipes_path, method: :get do |f| %>
     <%= f.input :ingredient_ids, placeholder: 'Search by ingredients', label: false, collection: @ingredients, label_method: :second, value_method: :first, input_html: {multiple: true, data: {controller: 'select2', select2_options_value: {tags: true}}}%>

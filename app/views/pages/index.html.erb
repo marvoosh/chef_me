@@ -1,5 +1,7 @@
-<h1>Hello</h1>
+<h1>Saved Recipes</h1>
 
-<% @saved_recipes.each do |recipe| %>
-  <%= recipe.id %>
+<% @recipes.each do |recipe| %>
+  <div class="recipe-cards-container">
+    <%= render 'components/card', recipe: recipe %>
+  </div>
 <% end %>
