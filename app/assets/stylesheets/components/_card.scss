@@ -1,3 +1,9 @@
+h1 {
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: -16px;
+}
+
 .recipe-card {
   flex: 1;
   background-color: white;
@@ -44,17 +50,7 @@
 
     .servings {
       // border: 1px solid red;
-      align-items: flex-end;
-      padding-right: 20px;
-
-      .title {
-        // border: 1px solid red;
-        padding-right: 8px;
-      }
-
-      ion-icon {
-        padding-right: 20%;
-      }
+      padding-left: 30px;
     }
 
     .values {
