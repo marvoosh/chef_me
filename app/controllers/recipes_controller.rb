@@ -2,7 +2,9 @@ class RecipesController < ApplicationController
   def index
     @recipes = Recipe.all
     @ingredients = ingredients_collection
-    @ingredient_ids = params[:query][:ingredient_ids]
+    if params[:query].present?
+      @ingredient_ids = params[:query][:ingredient_ids]
+    end
   end
 
   def show
