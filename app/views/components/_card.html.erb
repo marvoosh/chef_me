@@ -1,7 +1,7 @@
 <div class="recipe-card">
   <div class="card-img">
     <%= link_to recipe_path(recipe) do %>
-      <img src="https://source.unsplash.com/random"/>
+      <img src="<%= recipe.image_url %>"/>
     <% end %>
   </div>
   <div class="card-content">
@@ -18,7 +18,7 @@
       <div class="recipe-details-item ingredients">
         <div class="values">
           <ion-icon name="book-outline"></ion-icon>
-          <span class="value">5</span>
+          <span class="value"><%= recipe.recipe_ingredients.count %></span>
         </div>
         <div class="title">Ingredients</div>
       </div>
