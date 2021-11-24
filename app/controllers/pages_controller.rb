@@ -4,6 +4,10 @@ class PagesController < ApplicationController
   def home
   end
 
+  def index
+    @saved_recipes = SavedRecipe.all
+  end
+
   def search
     if params[:query].present?
       @ingredients = Ingredient.search_by_name(params[:query])
