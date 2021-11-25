@@ -4,25 +4,19 @@ class SavedRecipesController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @saved_recipe.recipe = @recipe
     @saved_recipe.user = current_user
-    if @saved_recipe.save
-      redirect_back fallback_location: '/'
-    else
-      redirect_back fallback_location: '/'
-    end
+    @saved_recipe.save
+    redirect_to recipes_path
   end
 
   def destroy
     @saved_recipe = SavedRecipe.find(params[:id])
     @saved_recipe.destroy
-    redirect_back fallback_location: '/'
+    redirect_to recipes_path
   end
 
   def update
-
+    @saved_recipe = SavedRecipe.find(params[:id])
+    @saved_recipe.toggle!(params[:attribute])
+    redirect_to recipes_path
   end
-
-  private
-    def saved_recipe_params
-      params.require(:saved_recipe).permit(:id)
-    end
 end
