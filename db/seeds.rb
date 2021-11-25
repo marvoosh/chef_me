@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'open-uri'
+
 RecipeIngredient.destroy_all
 SavedRecipe.destroy_all
 Ingredient.destroy_all
@@ -175,15 +177,17 @@ puts 'Finished recipe_ingridients'
 
 puts 'faker seed'
 30.times do
+  file = URI.open("https://loremflickr.com/320/240/dish")
   cuisine, = Faker::Food.ethnic_category.split
   recipe = Recipe.create(
     name: Faker::Food.dish,
     cook_time: [10, 15, 20, 25, 30, 40, 45].sample,
     servings: rand(2..6),
     cuisine: cuisine,
-    image_url: "https://loremflickr.com/320/240/dish",
+    image_url: file.base_uri,
     description: Faker::Food.description,
-    instructions: '1. Cut\n2. Cook\n3. Eat')
+    instructions: '1. Cut\n2. Cook\n3. Eat'
+  )
   4.times do
     ingredient = Ingredient.create(name: Faker::Food.ingredient)
     RecipeIngredient.create(
