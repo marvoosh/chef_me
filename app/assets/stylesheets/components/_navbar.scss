@@ -13,7 +13,8 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 100px;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin-right: 0;
 }
 
 .navbar-home {
@@ -25,5 +26,25 @@
   .navbar-wagon-link {
     color: white;
     font-weight: bold;
+  }
+}
+
+.navbar-left-div {
+  .a {
+    color: $green;
+    text-decoration: none;
+    background-color: transparent;
+  }
+  a:visited {
+  color: $green;
+  }
+  a:hover {
+  color: $dark-green;
+  }
+  a:active {
+  color: $green;
+  }
+  a:link {
+  color: $green;
   }
 }
