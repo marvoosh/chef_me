@@ -199,7 +199,7 @@ puts 'faker seed'
       recipe_id: recipe.id,
       ingredient_id: ingredient.id,
       quantity: [0.5, 1, 2, 3].sample,
-      unit: ['cup', 'tsp', 'tbsp', 'ml', 'gr']
+      unit: ['cup', 'tsp', 'tbsp', 'ml', 'gr'].sample
     )
   end
 end
