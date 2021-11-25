@@ -1,10 +1,13 @@
-
-<div class="search-form">
-  <%= simple_form_for :query, url: recipes_path, method: :get do |f| %>
-    <%= f.input :ingredient_ids, placeholder: 'Search by ingredients', label: false, collection: @ingredients, label_method: :second, value_method: :first, input_html: {multiple: true, data: {controller: 'select2', select2_options_value: {tags: true}}}%>
-    <%= f.button :submit, 'Find recipes', class: 'button' %>
-  <% end %>
+<div class="container">
+  <div class="search-form">
+    <%= simple_form_for :query, url: recipes_path, method: :get do |f| %>
+      <%= f.input :ingredient_ids, id: 'search-bar', placeholder: 'Search by ingredients', label: false, collection: @ingredients, label_method: :second, value_method: :first, input_html: {multiple: true, data: {controller: 'select2', select2_options_value: {tags: true}}}%>
+      <%= f.button :submit, 'Find recipes', class: 'button' %>
+    <% end %>
+  </div>
 </div>
+
+
 
 
 <h1>Top results</h1>

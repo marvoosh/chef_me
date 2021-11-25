@@ -1,3 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Button", "#", class:"button" %>
+
+<%= content_for(:navbar_class, "navbar-home") %>
+
+<div class='banner-container'>
+  <div class='banner-container-content text-center'>
+    <h2>Let Your Inner Chef Out</h2>
+    <p class='quote'>" No one is born a great cook,</p>
+    <p class='quote'>ones learn by doing "</p>
+    <p class='quote_author'>- Julia Child</p>
+    <p> Learn what to cook with what you have in your fridge</p>
+    <%= link_to 'Star Now !', "#" , class: 'button' %>
+  </div>
+</div>
+

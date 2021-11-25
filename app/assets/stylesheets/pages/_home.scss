@@ -11,3 +11,51 @@
     max-width: 1200px;
   }
 }
+
+.banner-container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://source.unsplash.com/collection/15031409");
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    color: #CEE5D0;
+    font-weight: bolder;
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    color: #E0C097;
+    font-weight: bolder;
+    font-size: 25px;
+    margin-bottom: 12px;
+  }
+  p {
+    color: rgb(223, 223, 223);
+    font-size: 20px;
+    margin-bottom: 15px;
+    opacity: .9;
+  }
+  p.quote {
+    color: rgb(223, 223, 223);
+    font-size: 16px;
+    margin-bottom: 1px;
+    opacity: .9;
+  }
+  p.quote_author {
+    color: rgb(223, 223, 223);
+    font-size: 18px;
+    margin-bottom: 20px;
+    opacity: .9;
+  }
+
+  .button {
+    letter-spacing: .6px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: 750;
+  }
+}
