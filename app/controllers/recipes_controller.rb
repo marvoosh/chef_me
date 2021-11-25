@@ -11,13 +11,15 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
+    @ingredients = RecipeIngredient.where(recipe_id: params[:id])
+    @instructions = @recipe.instructions.split("\\n")
+  end
+  def ingredients_collection
+
   end
 
   private
 
-  def ingredients_collection
-    Ingredient.all.map { |ingredient| [ingredient.id, ingredient.name] }
-  end
 
   def find_recipes(ids)
     recipes = []
