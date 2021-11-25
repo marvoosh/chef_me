@@ -1,6 +1,14 @@
 <div class="recipe-card">
   <div class="card-img">
-    <ion-icon class ='saved' name="bookmark-outline"></ion-icon>
+    <div class='icons'>
+      <%= link_to recipe_saved_recipes_path(recipe, SavedRecipe.new), method: :post do %>
+        <ion-icon class ='saved' name='bookmark-outline'></ion-icon>
+      <% end %>
+      <ion-icon class='heart' name="heart-outline"></ion-icon>
+      <ion-icon class='check' name="checkmark-outline"></ion-icon>
+
+    </div>
+
     <%= link_to recipe_path(recipe) do %>
       <img src="<%= recipe.image_url %>"/>
     <% end %>
