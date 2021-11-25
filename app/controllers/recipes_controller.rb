@@ -1,12 +1,12 @@
 class RecipesController < ApplicationController
   def index
     @ingredients = ingredients_collection
+    @saved_recipes = current_user.saved_recipes
     if params[:query].present?
       @ingredient_ids = params[:query][:ingredient_ids]
       @recipes = find_recipes(@ingredient_ids)
     else
       @recipes = Recipe.all
-      @saved_recipes = current_user.saved_recipes
     end
   end
 
