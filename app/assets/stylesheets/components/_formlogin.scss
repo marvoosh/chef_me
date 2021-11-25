@@ -12,8 +12,7 @@
     text-align: center;
   }
   .button {
-    width: 100%;
-    margin: 20px;
+    width: 50%;
     align-items: center;
     text-align: center;
   }
@@ -38,4 +37,9 @@
     color: white;
     background-color: $dark-green;
   }
+}
+
+.button-align{
+  display: flex;
+  justify-content: center;
 }
