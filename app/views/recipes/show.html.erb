@@ -1,5 +1,7 @@
 <div class="container">
 
+  <%= link_to 'Back', recipes_path, class: 'back' %>
+
     <h1 class="name"><%= @recipe.name %></h1> <br>
 
     <center><%=image_tag @recipe.image_url, class: "container-img"%></center><br>
@@ -42,7 +44,7 @@
 
 
 <br>
-  <h2 class="text-left">Instruction</h2> <br>
+  <h2 class="text-left">Instructions</h2> <br>
   <% @instructions.each do |instruction| %>
     <p><%= instruction %></p>
     <% end %>
