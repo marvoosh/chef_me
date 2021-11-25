@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="search-form">
-    <%= simple_form_for :query, url: recipes_path, method: :get do |f| %>
+  <div>
+    <%= simple_form_for :query, url: recipes_path, method: :get, html: { class: 'search-form' } do |f| %>
       <%= f.input :ingredient_ids, id: 'search-bar', placeholder: 'Search by ingredients', label: false, collection: @ingredients, label_method: :second, value_method: :first, input_html: {multiple: true, data: {controller: 'select2', select2_options_value: {tags: true}}}%>
       <%= f.button :submit, 'Find recipes', class: 'button' %>
     <% end %>
@@ -11,8 +11,10 @@
 
 
 <h1>Top results</h1>
+
 <% @recipes.each do |recipe| %>
-  <div class="recipe-cards-container">
-    <%= render 'components/card', recipe: recipe %>
-  </div>
+  <% saved_recipe = @saved_recipes.where(user_id: current_user.id, recipe_id: recipe.id)[0] %>
+    <div class="recipe-cards-container">
+      <%= render 'components/card', recipe: recipe, saved_recipe: saved_recipe %>
+    </div>
 <% end %>
