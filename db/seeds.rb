@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 RecipeIngredient.destroy_all
-Recipe.destroy_all
+SavedRecipe.destroy_all
 Ingredient.destroy_all
+Recipe.destroy_all
 User.destroy_all
 
 user1 = User.create(first_name: 'Marva', last_name: 'Noah', email: 'marva@test.com', password: '123123')
@@ -170,4 +171,36 @@ RecipeIngredient.create(
   unit: 'oz'
 )
 puts 'Finished recipe_ingridients'
+
+
+puts 'faker seed'
+30.times do
+  cuisine, = Faker::Food.ethnic_category.split
+  recipe = Recipe.create(
+    name: Faker::Food.dish,
+    cook_time: [10, 15, 20, 25, 30, 40, 45].sample,
+    servings: rand(2..6),
+    cuisine: cuisine,
+    image_url: "https://loremflickr.com/320/240/dish",
+    description: Faker::Food.description,
+    instructions: '1. Cut\n2. Cook\n3. Eat')
+  4.times do
+    ingredient = Ingredient.create(name: Faker::Food.ingredient)
+    RecipeIngredient.create(
+      recipe_id: recipe.id,
+      ingredient_id: ingredient.id,
+      quantity: [0.5, 1, 2, 3].sample,
+      unit: ['cup', 'tsp', 'tbsp', 'ml', 'gr'].sample
+    )
+  end
+  3.times do
+    ingredient = Ingredient.create(name: Faker::Food.vegetables)
+    RecipeIngredient.create(
+      recipe_id: recipe.id,
+      ingredient_id: ingredient.id,
+      quantity: [0.5, 1, 2, 3].sample,
+      unit: ['cup', 'tsp', 'tbsp', 'ml', 'gr']
+    )
+  end
+end
 puts 'Finished seeding'
