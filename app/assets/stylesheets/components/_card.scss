@@ -16,15 +16,11 @@ h1 {
     overflow: hidden;
     max-height: 200px;
     max-width: 100%;
-    .icons {
-      display: flex;
-      justify-content: space-between;
-    }
 
-    .saved, .heart, .check {
+    .fa-check-square, .fa-bookmark, .fa-heart {
       font-size: 24px;
       color: gray;
-      font-weight: bolder;
+      margin-right: 8px;
     }
 
     img {

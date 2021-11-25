@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
       @recipes = find_recipes(@ingredient_ids)
     else
       @recipes = Recipe.all
+      @saved_recipes = current_user.saved_recipes
     end
   end
 
