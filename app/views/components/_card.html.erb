@@ -1,12 +1,18 @@
 <div class="recipe-card">
   <div class="card-img">
     <div class='icons'>
-      <%= link_to recipe_saved_recipes_path(recipe, SavedRecipe.new), method: :post do %>
-        <ion-icon class ='saved' name='bookmark-outline'></ion-icon>
-      <% end %>
-      <ion-icon class='heart' name="heart-outline"></ion-icon>
-      <ion-icon class='check' name="checkmark-outline"></ion-icon>
 
+    <% if saved_recipe %>
+      <%= link_to saved_recipe_path(saved_recipe), method: :delete do %>
+        <i class="fas fa-bookmark"></i>
+      <% end %>
+    <% else %>
+      <%= link_to recipe_saved_recipes_path(recipe, SavedRecipe.new), method: :post do %>
+        <i class="far fa-bookmark"></i>
+      <% end %>
+    <% end %>
+      <i class="far fa-heart"></i>
+      <i class="far fa-check-square"></i>
     </div>
 
     <%= link_to recipe_path(recipe) do %>
@@ -36,7 +42,7 @@
           <ion-icon name="people-outline"></ion-icon>
           <span class="value"><%= recipe.servings %></span>
         </div>
-        <div class="title">Serving</div>
+        <div class="title">Servings</div>
       </div>
     </div>
   </div>
