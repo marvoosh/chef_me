@@ -1,9 +1,22 @@
 .back {
   color: $purple;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .back:hover {
   text-decoration: none;
   color: $green;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.text {
+  background-color: white;
+  padding-top: 10px;
+}
+
+.image {
+  object-fit: fill;
 }
