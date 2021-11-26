@@ -33,6 +33,11 @@ somen = Ingredient.create(name: 'somen noodles')
 onion = Ingredient.create(name: 'onion')
 sugar = Ingredient.create(name: 'sugar')
 chili_oil = Ingredient.create(name: 'chili oil')
+
+sesame_oil = Ingredient.create(name: 'sesame oil')
+pepper_flakes = Ingredient.create(name: 'red pepper flakes')
+tofu = Ingredient.create(name: 'fried tofu')
+sea_asparagus = Ingredient.create(name: 'sea asparagus')
 puts 'Ingrideients finished'
 
 puts 'Creating recipes'
@@ -43,7 +48,7 @@ mayak_avocado = Recipe.create(
   cuisine: 'Korean',
   image_url: 'https://i1.wp.com/photos.smugmug.com/Mayak-Avocado/i-DhXXCbB/0/5353428c/X3/840A9833-X3.jpg?resize=800%2C1200&ssl=1',
   description: 'Mayak Avocado, Korean Marinated Avocado Recipe! This simple,\neasy & quick avocado recipe will change your life!',
-  instructions: '1.Combine chopped garlic, chili, green onion, lemon juice, soy sauce, water, agave nectar, black pepper, and sesame seeds in a large airtight container. Give a good mix.\n2.Cut firm avocado lengthwise around the seed. Open and remove pits from avocados. Cut them into quarters, and carefully peel. Cut avocados into large chunks and add into marinate sauce. Add your choice of diced cucumber or cherry tomatoes.\nCarefully cover avocado chunks with marinating, be gentle because avocados are easy to break down. You can serve immediately or cover and marinate for 30 minutes before serving. You can serve by itself as a snack/appetizer, pair with crackers, make avocado toast or serve with warm cooked rice. Enjoy!'
+  instructions: '1. Combine chopped garlic, chili, green onion, lemon juice, soy sauce, water, agave nectar, black pepper, and sesame seeds in a large airtight container. Give a good mix.\n2. Cut firm avocado lengthwise around the seed. Open and remove pits from avocados. Cut them into quarters, and carefully peel. Cut avocados into large chunks and add into marinate sauce. Add your choice of diced cucumber or cherry tomatoes.\n3. Carefully cover avocado chunks with marinating, be gentle because avocados are easy to break down. You can serve immediately or cover and marinate for 30 minutes before serving. You can serve by itself as a snack/appetizer, pair with crackers, make avocado toast or serve with warm cooked rice. Enjoy!'
 )
 zucchini_noodles = Recipe.create(
   name: 'Zucchini Noodles',
@@ -52,11 +57,63 @@ zucchini_noodles = Recipe.create(
   cuisine: 'Asian',
   image_url: 'https://i1.wp.com/photos.smugmug.com/Zucchini-Noodles/i-gwk2BTV/0/01630733/X3/840A8976-X3.jpg?resize=800%2C1200&ssl=1',
   description: 'Easy Zucchini Noodles Recipe!',
-  instructions: '1.Bring a large pot of water to a boil, cook somen by following directions of package you’re using. When somen has 1 minute to finish, add zucchini & onion into pot and boil it together.\n2.Drain and rinse under cold water. Drain completely and place in a large mixing bowl. Add soy sauce, nectar, and chili oil then mix well. Garnish with sesame seeds and enjoy!'
+  instructions: '1. Bring a large pot of water to a boil, cook somen by following directions of package you’re using. When somen has 1 minute to finish, add zucchini & onion into pot and boil it together.\n2. Drain and rinse under cold water. Drain completely and place in a large mixing bowl. Add soy sauce, nectar, and chili oil then mix well. Garnish with sesame seeds and enjoy!'
+)
+poke_bowl = Recipe.create(
+  name: 'Tofu Poke Bowel',
+  cook_time: 15,
+  servings: 4,
+  cuisine: 'Hawaiian',
+  image_url: 'https://i1.wp.com/photos.smugmug.com/Tofu-Poke/i-ZwhXLn6/0/c30ac9da/X3/840A9418-X3.jpg?resize=800%2C1200&ssl=1',
+  description: 'Healthy Poke with Tofu!',
+  instructions: '1. Place sliced onions into ice water and let it sit for 5 to 10 minutes. This way we can reduce pungent raw onion flavor and it will give a refreshing crunch bite.\n2. Combine soy sauce, sesame oil, salt, sesame seeds, red pepper flakes, and msg in a mixing bowl. \n3. Drain onion and tap dry on a paper towel. Add tofu, onion, and sea asparagus into a mixing bowl and give it a toss. Transfer to an air-tight container and place in a refrigerator at least overnight before serving. This poke will last 7 days in a refrigerator. Enjoy with warm cooked rice! '
 )
 puts 'Recipes finished'
 
 puts 'Creating recipe_ingridients'
+RecipeIngredient.create(
+  recipe_id: poke_bowl.id,
+  ingredient_id: onion.id,
+  quantity: 0.25,
+  unit: 'diced'
+)
+RecipeIngredient.create(
+  recipe_id: poke_bowl.id,
+  ingredient_id: soy.id,
+  quantity: 1,
+  unit: 'tbsp'
+)
+RecipeIngredient.create(
+  recipe_id: poke_bowl.id,
+  ingredient_id: sesame_oil.id,
+  quantity: 1,
+  unit: 'tbsp'
+)
+RecipeIngredient.create(
+  recipe_id: poke_bowl.id,
+  ingredient_id: sesame.id,
+  quantity: 0.5,
+  unit: 'tsp'
+)
+RecipeIngredient.create(
+  recipe_id: poke_bowl.id,
+  ingredient_id: pepper_flakes.id,
+  quantity: 0.25,
+  unit: 'tsp'
+)
+RecipeIngredient.create(
+  recipe_id: poke_bowl.id,
+  ingredient_id: tofu.id,
+  quantity: 12,
+  unit: 'oz'
+)
+RecipeIngredient.create(
+  recipe_id: poke_bowl.id,
+  ingredient_id: sea_asparagus.id,
+  quantity: 1.5,
+  unit: 'oz'
+)
+
 RecipeIngredient.create(
   recipe_id: zucchini_noodles.id,
   ingredient_id: zucchini.id,
@@ -189,7 +246,7 @@ puts 'faker seed'
     instructions: '1. Cut\n2. Cook\n3. Eat'
   )
   4.times do
-    ingredient = Ingredient.create(name: Faker::Food.ingredient)
+    ingredient = Ingredient.create(name: Faker::Food.ingredient.downcase)
     RecipeIngredient.create(
       recipe_id: recipe.id,
       ingredient_id: ingredient.id,
