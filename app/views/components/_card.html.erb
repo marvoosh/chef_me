@@ -5,23 +5,23 @@
         <%= link_to saved_recipe_path(saved_recipe), method: :delete do %>
           <i class="fas fa-bookmark"></i>
         <% end %>
-        <%= link_to saved_recipe_path(saved_recipe, attribute: :favourite), method: :patch do %>
-          <% if saved_recipe.favourite %>
-            <i class="fas fa-heart"></i>
-          <% else %>
-            <i class="far fa-heart"></i>
-          <% end %>
-        <% end %>
-        <%= link_to saved_recipe_path(saved_recipe, attribute: :completed), method: :patch do %>
-          <% if saved_recipe.completed %>
-            <i class="fas fa-check-square"></i>
-          <% else %>
-            <i class="far fa-check-square"></i>
-          <% end %>
-        <% end %>
       <% else %>
-        <%= link_to recipe_saved_recipes_path(recipe, SavedRecipe.new), method: :post do %>
+        <%= link_to recipe_saved_recipes_path(recipe), method: :post do %>
           <i class="far fa-bookmark"></i>
+        <% end %>
+      <% end %>
+      <%= link_to recipe_saved_recipes_path(recipe, attribute: :favourite), method: :post do %>
+        <% if saved_recipe&.favourite %>
+          <i class="fas fa-heart"></i>
+        <% else %>
+          <i class="far fa-heart"></i>
+        <% end %>
+      <% end %>
+      <%= link_to recipe_saved_recipes_path(recipe, attribute: :completed), method: :post do %>
+        <% if saved_recipe&.completed %>
+          <i class="fas fa-check-square"></i>
+        <% else %>
+          <i class="far fa-check-square"></i>
         <% end %>
       <% end %>
     </div>
