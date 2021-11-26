@@ -1,10 +1,14 @@
 <div class="container">
 
-  <%= link_to 'Back', recipes_path, class: 'back' %>
+  <a onclick="window.history.back()" class='back'>
+    <i class="fas fa-arrow-left" style='margin-top: 10px;'></i>
+  </a>
+
+
 
     <h1 class="name"><%= @recipe.name %></h1> <br>
 
-    <center><%=image_tag @recipe.image_url, class: "container-img"%></center><br>
+    <center><%=image_tag @recipe.image_url, class: "container-img image"%></center><br>
 
     <div class="container-flex">
       <div class="container-flex-title">
@@ -31,8 +35,9 @@
       </div>
     </div
 </div>
+</div>
 <br>
-<div class="container">
+<div class="container text">
   <h2 class="text-left">Ingredients</h2> <br>
    <% @ingredients.each do |ingredient| %>
 
@@ -53,5 +58,4 @@
   <% @instructions.each do |instruction| %>
     <p><%= instruction %></p>
     <% end %>
-</div>
 <br>
