@@ -24,8 +24,8 @@ h1 {
     }
 
     img {
-      max-width: 100%;
-      color: $green;
+      width: 100%;
+
     }
   }
   .recipe-title {
@@ -36,6 +36,7 @@ h1 {
   .recipe-details {
     display: flex;
     justify-content: space-between;
+
 
     .recipe-details-item {
       flex: 1;
