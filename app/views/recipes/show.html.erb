@@ -36,11 +36,16 @@
   <h2 class="text-left">Ingredients</h2> <br>
    <% @ingredients.each do |ingredient| %>
 
-     <li><%= ingredient.ingredient.name %>
-          <%= ingredient.quantity %>
+      <li><% if ingredient.quantity.to_s[-1]=='0' %>
+            <%= ingredient.quantity.round %>
+          <% else %>
+            <%= ingredient.quantity %>
+          <% end %>
           <%= ingredient.unit %>
+          <%= ingredient.ingredient.name %>
     </li>
     <% end %>
+
 
 
 <br>
