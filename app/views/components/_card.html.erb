@@ -2,22 +2,22 @@
   <div class="card-img">
     <div class='icons'>
       <% if saved_recipe %>
-        <%= link_to saved_recipe_path(saved_recipe), method: :delete do %>
+        <%= link_to saved_recipe_path(saved_recipe), method: :delete, remote: true do %>
           <i class="fas fa-bookmark"></i>
         <% end %>
       <% else %>
-        <%= link_to recipe_saved_recipes_path(recipe), method: :post do %>
+        <%= link_to recipe_saved_recipes_path(recipe), method: :post, remote: true do %>
           <i class="far fa-bookmark"></i>
         <% end %>
       <% end %>
-      <%= link_to recipe_saved_recipes_path(recipe, attribute: :favourite), method: :post do %>
+      <%= link_to recipe_saved_recipes_path(recipe, attribute: :favourite), method: :post, remote: true do %>
         <% if saved_recipe&.favourite %>
           <i class="fas fa-heart"></i>
         <% else %>
           <i class="far fa-heart"></i>
         <% end %>
       <% end %>
-      <%= link_to recipe_saved_recipes_path(recipe, attribute: :completed), method: :post do %>
+      <%= link_to recipe_saved_recipes_path(recipe, attribute: :completed), method: :post, remote: true do %>
         <% if saved_recipe&.completed %>
           <i class="fas fa-check-square"></i>
         <% else %>
