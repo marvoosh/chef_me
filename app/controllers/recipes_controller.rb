@@ -14,6 +14,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @ingredients = RecipeIngredient.where(recipe_id: params[:id])
     @instructions = @recipe.instructions.split("\\n")
+    @saved_recipe = SavedRecipe.where(recipe_id: @recipe.id, user_id: current_user.id)[0]
   end
 
   private
