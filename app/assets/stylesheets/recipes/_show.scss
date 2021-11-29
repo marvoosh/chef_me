@@ -26,14 +26,15 @@ h1 {
   justify-content: space-between;
 
   .icons {
-    // border: 1px red solid;
     margin-top: 12px;
     font-size: 24px;
     margin-right: 8px;
     margin-bottom: 8px;
 
-    .fa-check-square, .fa-bookmark, .fa-heart {
-         color: gray;
+    a {
+      text-decoration: none;
+      color: gray;
+
     }
   }
 }

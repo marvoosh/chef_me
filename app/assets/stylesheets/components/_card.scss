@@ -18,6 +18,10 @@ h1 {
     max-height: 200px;
     max-width: 100%;
 
+    a {
+      text-decoration: none;
+    }
+
     .fa-check-square, .fa-bookmark, .fa-heart {
       font-size: 24px;
       color: gray;
