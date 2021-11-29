@@ -9,4 +9,8 @@ export default class extends Controller {
   connect() {
     $(this.element).select2(this.optionsValue);
   }
+
+  disconnect() {
+    $(this.element).select2('destroy');
+  }
 }
