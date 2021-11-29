@@ -8,12 +8,12 @@ class SavedRecipesController < ApplicationController
     @saved_recipe.recipe = @recipe
     @saved_recipe.user = current_user
     @saved_recipe.save
-    redirect_to recipes_path
+    redirect_back(fallback_location: recipes_path)
   end
 
   def destroy
     @saved_recipe = SavedRecipe.find(params[:id])
     @saved_recipe.destroy
-    redirect_to recipes_path
+    redirect_back(fallback_location: recipes_path)
   end
 end
