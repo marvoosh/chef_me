@@ -234,10 +234,12 @@ puts 'Finished recipe_ingridients'
 
 puts 'faker seed'
 30.times do
-  file = URI.open("https://loremflickr.com/320/240/dish")
+  name = Faker::Food.dish
+  name_file = name.split.join('_')
+  file = URI.open("https://loremflickr.com/320/240/#{name_file}")
   cuisine, = Faker::Food.ethnic_category.split
   recipe = Recipe.create(
-    name: Faker::Food.dish,
+    name: name,
     cook_time: [10, 15, 20, 25, 30, 40, 45].sample,
     servings: rand(2..6),
     cuisine: cuisine,
