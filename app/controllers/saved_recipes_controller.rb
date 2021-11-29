@@ -8,7 +8,8 @@ class SavedRecipesController < ApplicationController
     @saved_recipe.recipe = @recipe
     @saved_recipe.user = current_user
     @saved_recipe.save
-    redirect_back(fallback_location: recipes_path)
+    render json: @saved_recipe
+    # redirect_back(fallback_location: recipes_path)
   end
 
   def destroy
