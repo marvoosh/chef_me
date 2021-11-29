@@ -1,61 +1,79 @@
 <div class="container">
-
-  <a onclick="window.history.back()" class='back'>
-    <i class="fas fa-arrow-left" style='margin-top: 10px;'></i>
-  </a>
-
-
-
-    <h1 class="name"><%= @recipe.name %></h1> <br>
-
-    <center><%=image_tag @recipe.image_url, class: "container-img image"%></center><br>
-
-    <div class="container-flex">
-      <div class="container-flex-title">
-        <div class="title">
+  <div class='back-and-icons'>
+    <a onclick="window.history.back()" class='back'>
+      <i class="fas fa-arrow-left" style='margin-top: 10px;'></i>
+    </a>
+    <div class='icons'>
+      <% if @saved_recipe %>
+        <%= link_to saved_recipe_path(@saved_recipe), method: :delete do %>
+          <i class="fas fa-bookmark"></i>
+        <% end %>
+      <% else %>
+        <%= link_to recipe_saved_recipes_path(@recipe), method: :post do %>
+          <i class="far fa-bookmark"></i>
+        <% end %>
+      <% end %>
+      <%= link_to recipe_saved_recipes_path(@recipe, attribute: :favourite), method: :post do %>
+        <% if @saved_recipe && @saved_recipe&.favourite %>
+          <i class="fas fa-heart"></i>
+        <% else %>
+          <i class="far fa-heart"></i>
+        <% end %>
+      <% end %>
+      <%= link_to recipe_saved_recipes_path(@recipe, attribute: :completed), method: :post do %>
+        <% if @saved_recipe && @saved_recipe&.completed %>
+          <i class="fas fa-check-square"></i>
+        <% else %>
+          <i class="far fa-check-square"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <h1 class="name"><%= @recipe.name %></h1>
+  <br>
+  <center><%=image_tag @recipe.image_url, class: "container-img image"%></center><br>
+  <div class="container-flex">
+    <div class="container-flex-title">
+      <div class="title">
         <ion-icon name="time-outline"></ion-icon>
         Minutes
-        </div>
-        <center><%= @recipe.cook_time %></center>
       </div>
-
-      <div class="container-flex-title">
-        <div class="title">
-          <ion-icon name="book-outline"></ion-icon>
-          Ingredients
-        </div>
-        <center><%=@recipe.recipe_ingredients.count  %></center>
+      <center><%= @recipe.cook_time %></center>
+    </div>
+    <div class="container-flex-title">
+      <div class="title">
+        <ion-icon name="book-outline"></ion-icon>
+        Ingredients
       </div>
-
-      <div class="container-flex-title">
-        <div class="title">
+      <center><%=@recipe.recipe_ingredients.count  %></center>
+    </div>
+    <div class="container-flex-title">
+      <div class="title">
         <ion-icon name="people-outline"></ion-icon>
-        Serving</div>
-        <center><%= @recipe.servings %></center>
-      </div>
-    </div
+        Servings</div>
+      <center><%= @recipe.servings %></center>
+    </div>
+  </div
 </div>
 </div>
 <br>
 <div class="container text">
-  <h2 class="text-left">Ingredients</h2> <br>
-   <% @ingredients.each do |ingredient| %>
-
-      <li><% if ingredient.quantity.to_s[-1]=='0' %>
-            <%= ingredient.quantity.round %>
-          <% else %>
-            <%= ingredient.quantity %>
-          <% end %>
-          <%= ingredient.unit %>
-          <%= ingredient.ingredient.name %>
+  <h2 class="text-left">Ingredients</h2>
+  <br>
+  <% @ingredients.each do |ingredient| %>
+    <li><% if ingredient.quantity.to_s[-1]=='0' %>
+        <%= ingredient.quantity.round %>
+      <% else %>
+        <%= ingredient.quantity %>
+      <% end %>
+      <%= ingredient.unit %>
+      <%= ingredient.ingredient.name %>
     </li>
-    <% end %>
-
-
-
-<br>
-  <h2 class="text-left">Instructions</h2> <br>
+  <% end %>
+  <br>
+  <h2 class="text-left">Instructions</h2>
+  <br>
   <% @instructions.each do |instruction| %>
     <p><%= instruction %></p>
-    <% end %>
-<br>
+  <% end %>
+  <br>
