@@ -9,7 +9,7 @@ export default class extends Controller {
     e.preventDefault();
     e.stopImmediatePropagation();
     if (e.target.dataset.saved==='0') {
-      fetch(`recipes/${e.target.dataset.recipe}/saved_recipes`, {
+      fetch(`/recipes/${e.target.dataset.recipe}/saved_recipes`, {
         headers: {
           'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
         },
@@ -23,7 +23,7 @@ export default class extends Controller {
       e.target.classList.remove('far')
       e.target.classList.add('fas')
     } else {
-      fetch(`saved_recipes/${e.target.dataset.saved}`, {
+      fetch(`/saved_recipes/${e.target.dataset.saved}`, {
         headers: {
           'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
         },
@@ -45,8 +45,6 @@ export default class extends Controller {
         complete.classList.remove('fas')
         complete.classList.add('far')
       }
-
-
     }
   }
 

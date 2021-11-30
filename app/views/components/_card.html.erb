@@ -8,16 +8,16 @@
       <% end %>
       <%= link_to recipe_saved_recipes_path(recipe, attribute: :favourite), method: :post, remote: true, class: 'card-icons' do %>
         <% if saved_recipe&.favourite %>
-          <i class="fas fa-heart" data-action='click->card-icons#favourite' data-recipe='<%recipe.id%>'></i>
+          <i class="fas fa-heart" data-action='click->card-icons#favourite'></i>
         <% else %>
-          <i class="far fa-heart" data-action='click->card-icons#favourite' data-recipe='<%recipe.id%>'></i>
+          <i class="far fa-heart" data-action='click->card-icons#favourite'></i>
         <% end %>
       <% end %>
       <%= link_to recipe_saved_recipes_path(recipe, attribute: :completed), method: :post, remote: true, class: 'card-icons' do %>
         <% if saved_recipe&.completed %>
-          <i class="fas fa-check-square" data-action='click->card-icons#complete' data-recipe='<%recipe.id%>'></i>
+          <i class="fas fa-check-square" data-action='click->card-icons#complete'></i>
         <% else %>
-          <i class="far fa-check-square" data-action='click->card-icons#complete' data-recipe='<%recipe.id%>'></i>
+          <i class="far fa-check-square" data-action='click->card-icons#complete'></i>
         <% end %>
       <% end %>
     </div>

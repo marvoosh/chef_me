@@ -3,28 +3,24 @@
     <a onclick="window.history.back()" class='back'>
       <i class="fas fa-arrow-left" style='margin-top: 10px;'></i>
     </a>
-    <div class='icons'>
+    <div class='icons' data-controller='card-icons'>
       <% if @saved_recipe %>
-        <%= link_to saved_recipe_path(@saved_recipe), method: :delete do %>
-          <i class="fas fa-bookmark"></i>
-        <% end %>
+        <i class="fas fa-bookmark" data-action='click->card-icons#bookmark' data-saved='<%=@saved_recipe.id%>' data-recipe='<%=@recipe.id%>'></i>
       <% else %>
-        <%= link_to recipe_saved_recipes_path(@recipe), method: :post do %>
-          <i class="far fa-bookmark"></i>
-        <% end %>
+        <i class="far fa-bookmark" data-action='click->card-icons#bookmark' data-recipe='<%=@recipe.id%>' data-saved='0'></i>
       <% end %>
-      <%= link_to recipe_saved_recipes_path(@recipe, attribute: :favourite), method: :post do %>
+      <%= link_to recipe_saved_recipes_path(@recipe, attribute: :favourite), method: :post, remote: true do %>
         <% if @saved_recipe && @saved_recipe&.favourite %>
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart" data-action='click->card-icons#favourite'></i>
         <% else %>
-          <i class="far fa-heart"></i>
+          <i class="far fa-heart" data-action='click->card-icons#favourite'></i>
         <% end %>
       <% end %>
-      <%= link_to recipe_saved_recipes_path(@recipe, attribute: :completed), method: :post do %>
+      <%= link_to recipe_saved_recipes_path(@recipe, attribute: :completed), method: :post, remote: true do %>
         <% if @saved_recipe && @saved_recipe&.completed %>
-          <i class="fas fa-check-square"></i>
+          <i class="fas fa-check-square" data-action='click->card-icons#complete'></i>
         <% else %>
-          <i class="far fa-check-square"></i>
+          <i class="far fa-check-square" data-action='click->card-icons#complete'></i>
         <% end %>
       <% end %>
     </div>
