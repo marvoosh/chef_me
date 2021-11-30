@@ -1,5 +1,5 @@
 .navbar-lewagon {
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
   position: sticky;
   top: 0;
@@ -82,8 +82,9 @@ input[type="checkbox"]:checked ~ nav
 }
 
 label {
+  left: 60px;
   position: absolute;
   z-index: 1;
   cursor: pointer;
-
+  top: 30px;
 }
