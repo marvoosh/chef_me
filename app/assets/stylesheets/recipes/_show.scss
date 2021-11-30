@@ -29,13 +29,12 @@ h1 {
   .icons {
     margin-top: 12px;
     font-size: 24px;
-    margin-right: 8px;
     margin-bottom: 8px;
-
     a, i {
       text-decoration: none;
+      // border: 1px solid blue;
       color: gray;
-
+      padding-left: 4px;
     }
   }
 }
@@ -50,8 +49,8 @@ h1 {
     .ssb-icon {
       // border: 1px blue solid;
       background-size: 24px 24px;
-      height: 24px;
-      width: 24px;
+      height: 32px;
+      width: 32px;
     }
   }
 }
