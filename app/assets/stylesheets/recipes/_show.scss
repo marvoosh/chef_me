@@ -1,3 +1,4 @@
+
 .back {
   color: $purple;
   font-size: 24px;
@@ -35,6 +36,22 @@ h1 {
       text-decoration: none;
       color: gray;
 
+    }
+  }
+}
+
+.social {
+  // border: 1px red solid;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  .social-share-button {
+    .ssb-icon {
+      // border: 1px blue solid;
+      background-size: 24px 24px;
+      height: 24px;
+      width: 24px;
     }
   }
 }
