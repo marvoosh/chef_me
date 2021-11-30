@@ -19,13 +19,19 @@ user2 = User.create(first_name: 'Thallia', last_name: 'Rosa', email: 'lia@test.c
 puts 'Creating ingridients'
 avocado = Ingredient.create(name: 'avocado')
 black_pepper = Ingredient.create(name: 'black pepper')
+broccoli = Ingredient.create(name: 'broccoli')
 carrot = Ingredient.create(name: 'carrot')
 canned_tomatoes = Ingredient.create(name: 'canned tomatoes')
 cheddar = Ingredient.create(name: 'cheddar')
 cucumber = Ingredient.create(name: 'cucumber')
+courgette = Ingredient.create(name: 'courgette')
 chili_oil = Ingredient.create(name: 'chili oil')
 chilli_powder = Ingredient.create(name: 'chilli powder')
+eggs = Ingredient.create(name: 'eggs')
+filo = Ingredient.create(name: 'filo pastry')
 garlic = Ingredient.create(name: 'garlic')
+green_beans = Ingredient.create(name: 'green beans')
+red_wine_vinegar = Ingredient.create(name: 'red wine vinegar')
 green_onion = Ingredient.create(name: 'green onion')
 lemon = Ingredient.create(name: 'lemon juice')
 olive_oil = Ingredient.create(name: 'olive oil')
@@ -38,7 +44,7 @@ sugar = Ingredient.create(name: 'sugar')
 sweetener = Ingredient.create(name: 'sweetener')
 sesame = Ingredient.create(name: 'sesame seeds')
 sesame_oil = Ingredient.create(name: 'sesame oil')
-spinach = Ingredient.craete(name: 'spinach')
+spinach = Ingredient.create(name: 'spinach')
 sundried_tomato = Ingredient.create(name: sundried_tomato)
 sea_asparagus = Ingredient.create(name: 'sea asparagus')
 thai_chili = Ingredient.create(name: 'Thai chili')
@@ -52,6 +58,26 @@ zucchini = Ingredient.create(name: 'zucchini')
 puts 'Ingridients finished'
 
 puts 'Creating recipes'
+quiche_traybake = Recipe.create(
+  name: 'Speedy quiche traybake',
+  cook_time: 40,
+  servings: 4,
+  cuisine: 'Vegetarian',
+  image_url: 'https://img.jamieoliver.com/jamieoliver/recipe-database/118283765.jpg?tr=w-800,h-1066',
+  description: 'This genius veggie quiche traybake takes the hassle out of making quiche from scratch.',
+  instructions: '1. Preheat the oven to 180°C/350°F/gas 4.\n2. Grease a large 25cm by 35cm roasting tray with 1 teaspoon of olive oil. Crack the eggs into a bowl and beat with a fork.\n3. Layer the filo sheets into the tray, laying one sheet horizontally, and the next vertically, repeating as you layer, brushing a little of the egg between each sheet. (Make sure they cover the base of the tray and go up the sides so it can contain the filling.) Add a final brush to the last layer and scrunch up any excess pastry that hangs over.\n4. Finely slice the spring onions and add to the bowl. Coarsely grate the Cheddar cheese (reserving a little for the top) and the courgette, then add them to the bowl. Break the broccoli into florets, then thinly slice and add to the bowl. Season to perfection with sea salt and black pepper, then mix together.\5. Carefully pour the mixture into the prepared pastry case, spreading it out so it’s in an even layer, then sprinkle the remaining cheese over the top.\n6. Cook for 35 minutes, on the bottom of the oven, until the pastry is golden and the filling is set.'
+)
+
+dressed_beans = Recipe.create(
+  name: 'Dressed beans',
+  cook_time: 15,
+  servings: 6,
+  cuisine: 'Vegetarian',
+  image_url: 'https://img.jamieoliver.com/jamieoliver/recipe-database/126291617.jpg?tr=w-800,h-1066',
+  description: 'Dressed green beans with garlic and vinegar. Stands alone or as a side dish.',
+  instructions: '1. Prep the mixed green and runner beans. Peel the garlic and finely grate into a little jug, add 2 tablespoons each of extra virgin olive oil and red wine vinegar, and a pinch of sea salt and black pepper, then mix well. Cover everything and store overnight.\n2. Cook the beans in a large pan of boiling water for 7 minutes, or until just soft. Drain well, then return to the pan and toss with the dressing. Serve hot or at room temperature.'
+)
+
 mayak_avocado = Recipe.create(
   name: 'Mayak Avocado',
   cook_time: 20,
@@ -92,6 +118,75 @@ vegetarian_enchiladas = Recipe.create(
 puts 'Recipes finished'
 
 puts 'Creating recipe_ingridients'
+RecipeIngredient.create(
+  recipe_id: quiche_traybake.id,
+  ingredient_id: olive_oil.id,
+  quantity: 1,
+  unit: 'tbsp'
+)
+RecipeIngredient.create(
+  recipe_id: quiche_traybake.id,
+  ingredient_id: eggs.id,
+  quantity: 6,
+  unit: 'medium'
+)
+RecipeIngredient.create(
+  recipe_id: quiche_traybake.id,
+  ingredient_id: green_onion.id,
+  quantity: 1,
+  unit: 'bunch'
+)
+RecipeIngredient.create(
+  recipe_id: quiche_traybake.id,
+  ingredient_id: cheddar.id,
+  quantity: 55,
+  unit: 'g'
+)
+RecipeIngredient.create(
+  recipe_id: quiche_traybake.id,
+  ingredient_id: broccoli.id,
+  quantity: 300,
+  unit: 'g'
+)
+RecipeIngredient.create(
+  recipe_id: quiche_traybake.id,
+  ingredient_id: courgette.id,
+  quantity: 1,
+  unit: 'large'
+)
+RecipeIngredient.create(
+  recipe_id: quiche_traybake.id,
+  ingredient_id: filo.id,
+  quantity: 250,
+  unit: 'g'
+)
+
+puts 'Creating recipe_ingridients'
+RecipeIngredient.create(
+  recipe_id: dressed_beans.id,
+  ingredient_id: green_beans.id,
+  quantity: 1.2,
+  unit: 'kg'
+)
+RecipeIngredient.create(
+  recipe_id: dressed_beans.id,
+  ingredient_id: garlic.id,
+  quantity: 2,
+  unit: 'cloves'
+)
+RecipeIngredient.create(
+  recipe_id: dressed_beans.id,
+  ingredient_id: olive_oil.id,
+  quantity: 2,
+  unit: 'tbsp'
+)
+RecipeIngredient.create(
+  recipe_id: dressed_beans.id,
+  ingredient_id: red_wine_vinegar.id,
+  quantity: 2,
+  unit: 'tbsp'
+)
+
 RecipeIngredient.create(
   recipe_id: poke_bowl.id,
   ingredient_id: onion.id,
