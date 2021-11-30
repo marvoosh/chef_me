@@ -31,20 +31,59 @@
 
 .navbar-left-div {
   .a {
-    color: $green;
+    color: $light-gray;
     text-decoration: none;
     background-color: transparent;
   }
   a:visited {
-  color: $green;
+  color: $light-gray;
   }
   a:hover {
-  color: $dark-green;
+  color: $green;
   }
   a:active {
-  color: $green;
+  color: $light-gray;
   }
   a:link {
-  color: $green;
+  color: $light-gray;
   }
+}
+
+nav{
+  background-color: rgba(1,105,110, .9);
+  top: 85px;
+  width: 175px;
+  left: -175px;
+  height: 1000px;
+  position: absolute;
+  transition: all .5s;
+}
+
+ul {
+  list-style: none;
+  position: absolute;
+  top: 5px;
+  width: 100%;
+  left: -20px
+}
+
+li {
+  border-bottom: 1px solid #F4F4F4;
+}
+
+input[type="checkbox"]
+{
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ nav
+{
+  transform: translateX(175px);
+}
+
+label {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+
 }
