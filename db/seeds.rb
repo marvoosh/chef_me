@@ -14,31 +14,42 @@ Recipe.destroy_all
 User.destroy_all
 
 user1 = User.create(first_name: 'Marva', last_name: 'Noah', email: 'marva@test.com', password: '123123')
+user2 = User.create(first_name: 'Thallia', last_name: 'Rosa', email: 'lia@test.com', password: '123123')
 
 puts 'Creating ingridients'
+avocado = Ingredient.create(name: 'avocado')
+black_pepper = Ingredient.create(name: 'black pepper')
+carrot = Ingredient.create(name: 'carrot')
+canned_tomatoes = Ingredient.create(name: 'canned tomatoes')
+cheddar = Ingredient.create(name: 'cheddar')
+cucumber = Ingredient.create(name: 'cucumber')
+chili_oil = Ingredient.create(name: 'chili oil')
+chilli_powder = Ingredient.create(name: 'chilli powder')
 garlic = Ingredient.create(name: 'garlic')
-thai_chili = Ingredient.create(name: 'Thai chili')
 green_onion = Ingredient.create(name: 'green onion')
 lemon = Ingredient.create(name: 'lemon juice')
-soy = Ingredient.create(name: 'soy sauce')
-water = Ingredient.create(name: 'water')
-sweetener = Ingredient.create(name: 'sweetener')
-black_pepper = Ingredient.create(name: 'black pepper')
-sesame = Ingredient.create(name: 'sesame seeds')
-avocado = Ingredient.create(name: 'avocado')
-cucamber = Ingredient.create(name: 'cucumber')
-
-zucchini = Ingredient.create(name: 'zucchini')
-somen = Ingredient.create(name: 'somen noodles')
+olive_oil = Ingredient.create(name: 'olive oil')
 onion = Ingredient.create(name: 'onion')
-sugar = Ingredient.create(name: 'sugar')
-chili_oil = Ingredient.create(name: 'chili oil')
-
-sesame_oil = Ingredient.create(name: 'sesame oil')
 pepper_flakes = Ingredient.create(name: 'red pepper flakes')
-tofu = Ingredient.create(name: 'fried tofu')
+pulses = Ingredient.create(name: 'pulses')
+soy = Ingredient.create(name: 'soy sauce')
+somen = Ingredient.create(name: 'somen noodles')
+sugar = Ingredient.create(name: 'sugar')
+sweetener = Ingredient.create(name: 'sweetener')
+sesame = Ingredient.create(name: 'sesame seeds')
+sesame_oil = Ingredient.create(name: 'sesame oil')
+spinach = Ingredient.craete(name: 'spinach')
+sundried_tomato = Ingredient.create(name: sundried_tomato)
 sea_asparagus = Ingredient.create(name: 'sea asparagus')
-puts 'Ingrideients finished'
+thai_chili = Ingredient.create(name: 'Thai chili')
+tortilla = Ingredient.create(name: 'tortilla')
+tofu = Ingredient.create(name: 'fried tofu')
+water = Ingredient.create(name: 'water')
+yogurt = Ingredient.create(name: 'yogurt')
+zucchini = Ingredient.create(name: 'zucchini')
+
+
+puts 'Ingridients finished'
 
 puts 'Creating recipes'
 mayak_avocado = Recipe.create(
@@ -60,13 +71,23 @@ zucchini_noodles = Recipe.create(
   instructions: '1. Bring a large pot of water to a boil, cook somen by following directions of package you’re using. When somen has 1 minute to finish, add zucchini & onion into pot and boil it together.\n2. Drain and rinse under cold water. Drain completely and place in a large mixing bowl. Add soy sauce, nectar, and chili oil then mix well. Garnish with sesame seeds and enjoy!'
 )
 poke_bowl = Recipe.create(
-  name: 'Tofu Poke Bowel',
+  name: 'Tofu Poke Bowl',
   cook_time: 15,
   servings: 4,
   cuisine: 'Hawaiian',
   image_url: 'https://i1.wp.com/photos.smugmug.com/Tofu-Poke/i-ZwhXLn6/0/c30ac9da/X3/840A9418-X3.jpg?resize=800%2C1200&ssl=1',
   description: 'Healthy Poke with Tofu!',
   instructions: '1. Place sliced onions into ice water and let it sit for 5 to 10 minutes. This way we can reduce pungent raw onion flavor and it will give a refreshing crunch bite.\n2. Combine soy sauce, sesame oil, salt, sesame seeds, red pepper flakes, and msg in a mixing bowl. \n3. Drain onion and tap dry on a paper towel. Add tofu, onion, and sea asparagus into a mixing bowl and give it a toss. Transfer to an air-tight container and place in a refrigerator at least overnight before serving. This poke will last 7 days in a refrigerator. Enjoy with warm cooked rice! '
+)
+
+vegetarian_enchiladas = Recipe.create(
+  name: 'Vegetarian Enchiladas',
+  cook_time: 30,
+  servings: 4,
+  cuisine: 'Vegetarian',
+  image_url: 'https://tastesbetterfromscratch.com/wp-content/uploads/2016/01/Vegetarian-Enchiladas-4.jpg',
+  description: 'Healthy Vegetarian Enchiladas!',
+  instructions: '1. Heat the oil in a large frying pan. Cook the onions and carrots for 5-8 mins until soft – add a splash of water if they start to stick. Sprinkle in the chilli powder and cook for 1 min more. Pour in the tomatoes and pulses and bring to the boil. Turn down the heat and simmer for 5-10 mins, stirring occasionally, until thickened. Remove from the heat and season well.\n2. Heat grill to high. Spread a spoonful of the bean chilli over a large ovenproof dish. Lay each tortilla onto a board, fill with a few tbsp of chilli mixture, fold over the ends and roll up to seal. Place them into the ovenproof dish. Spoon the remaining chilli on top.\n3. Mix the yogurt and grated cheese together with some seasoning, and spoon over the enchiladas. Grill for a few mins until the top is golden and bubbling. Serve with a green salad.'
 )
 puts 'Recipes finished'
 
@@ -225,45 +246,110 @@ RecipeIngredient.create(
 )
 RecipeIngredient.create(
   recipe_id: mayak_avocado.id,
-  ingredient_id: cucamber.id,
+  ingredient_id: cucumber.id,
   quantity: 3,
   unit: 'oz'
 )
+
+RecipeIngredient.create(
+  recipe_id: vegetarian_enchiladas.id,
+  ingredient_id: olive_oil.id,
+  quantity: 1,
+  unit: 'tsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: vegetarian_enchiladas.id,
+  ingredient_id: onion.id,
+  quantity: 2,
+  unit: 'units'
+)
+
+RecipeIngredient.create(
+  recipe_id: vegetarian_enchiladas.id,
+  ingredient_id: carrot.id,
+  quantity: 280,
+  unit: 'g'
+)
+
+
+RecipeIngredient.create(
+  recipe_id: vegetarian_enchiladas.id,
+  ingredient_id: chilli_powder.id,
+  quantity: 2,
+  unit: 'tsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: vegetarian_enchiladas.id,
+  ingredient_id: canned_tomatoes.id,
+  quantity: 2,
+  unit: 'cans'
+)
+
+RecipeIngredient.create(
+  recipe_id: vegetarian_enchiladas.id,
+  ingredient_id: pulses.id,
+  quantity: 2,
+  unit: 'cans'
+)
+
+RecipeIngredient.create(
+  recipe_id: vegetarian_enchiladas.id,
+  ingredient_id: tortilla.id,
+  quantity: 6,
+  unit: 'units'
+)
+
+RecipeIngredient.create(
+  recipe_id: vegetarian_enchiladas.id,
+  ingredient_id: yogurt.id,
+  quantity: 200,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: vegetarian_enchiladas.id,
+  ingredient_id: cheddar.id,
+  quantity: 50,
+  unit: 'g'
+)
+
 puts 'Finished recipe_ingridients'
 
 
-puts 'faker seed'
-30.times do
-  name = Faker::Food.dish
-  name_file = name.split.join('_')
-  file = URI.open("https://loremflickr.com/320/240/#{name_file}")
-  cuisine, = Faker::Food.ethnic_category.split
-  recipe = Recipe.create(
-    name: name,
-    cook_time: [10, 15, 20, 25, 30, 40, 45].sample,
-    servings: rand(2..6),
-    cuisine: cuisine,
-    image_url: file.base_uri,
-    description: Faker::Food.description,
-    instructions: '1. Cut\n2. Cook\n3. Eat'
-  )
-  4.times do
-    ingredient = Ingredient.create(name: Faker::Food.ingredient.downcase)
-    RecipeIngredient.create(
-      recipe_id: recipe.id,
-      ingredient_id: ingredient.id,
-      quantity: [0.5, 1, 2, 3].sample,
-      unit: ['cup', 'tsp', 'tbsp', 'ml', 'gr'].sample
-    )
-  end
-  3.times do
-    ingredient = Ingredient.create(name: Faker::Food.vegetables)
-    RecipeIngredient.create(
-      recipe_id: recipe.id,
-      ingredient_id: ingredient.id,
-      quantity: [0.5, 1, 2, 3].sample,
-      unit: ['cup', 'tsp', 'tbsp', 'ml', 'gr'].sample
-    )
-  end
-end
+# puts 'faker seed'
+# 30.times do
+#   name = Faker::Food.dish
+#   name_file = name.split.join('_')
+#   file = URI.open("https://loremflickr.com/320/240/#{name_file}")
+#   cuisine, = Faker::Food.ethnic_category.split
+#   recipe = Recipe.create(
+#     name: name,
+#     cook_time: [10, 15, 20, 25, 30, 40, 45].sample,
+#     servings: rand(2..6),
+#     cuisine: cuisine,
+#     image_url: file.base_uri,
+#     description: Faker::Food.description,
+#     instructions: '1. Cut\n2. Cook\n3. Eat'
+#   )
+#   4.times do
+#     ingredient = Ingredient.create(name: Faker::Food.ingredient.downcase)
+#     RecipeIngredient.create(
+#       recipe_id: recipe.id,
+#       ingredient_id: ingredient.id,
+#       quantity: [0.5, 1, 2, 3].sample,
+#       unit: ['cup', 'tsp', 'tbsp', 'ml', 'gr'].sample
+#     )
+#   end
+#   3.times do
+#     ingredient = Ingredient.create(name: Faker::Food.vegetables)
+#     RecipeIngredient.create(
+#       recipe_id: recipe.id,
+#       ingredient_id: ingredient.id,
+#       quantity: [0.5, 1, 2, 3].sample,
+#       unit: ['cup', 'tsp', 'tbsp', 'ml', 'gr'].sample
+#     )
+#   end
+# end
 puts 'Finished seeding'
