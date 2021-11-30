@@ -3,9 +3,29 @@
   <% if user_signed_in? %>
 
     <div class="navbar-left-div">
-      <%= link_to dashboard_path, class: "navbar-brand" do %>
-        <i class="fas fa-book"></i>
-      <% end %>
+      <input type="checkbox" id="chec">
+      <label for="chec">
+        <i class="fas fa-book" style="color: rgb(1,105,110);"></i>
+      </label>
+      <nav>
+        <ul>
+          <li>
+            <%= link_to dashboard_path, class: "navbar-brand" do %>
+              <i class="fas fa-bookmark"></i>  Saved
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#", class: "navbar-brand" do %>
+              <i class="fas fa-heart"></i>  Favourites
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#", class: "navbar-brand" do %>
+              <i class="far fa-check-square"></i>  Completed
+            <% end %>
+          </li>
+        </ul>
+      </nav>
     </div>
 
     <div>
@@ -14,7 +34,7 @@
       <% end %>
     </div>
 
-    <div>
+    <div style="cursor: pointer;">
       <%= image_tag "https://ca.slack-edge.com/T02NE0241-U0289FREFLY-4c0ed7a2ec46-512", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
