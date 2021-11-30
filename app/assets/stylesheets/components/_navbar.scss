@@ -49,16 +49,15 @@
   }
 }
 
-nav{
+nav {
   background-color: rgba(1,105,110, .9);
   top: 85px;
   width: 175px;
   left: -175px;
-  height: 1000px;
   position: absolute;
   transition: all .5s;
+  height: calc(100vh - 85px);
 }
-
 ul {
   list-style: none;
   position: absolute;
