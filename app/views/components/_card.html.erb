@@ -21,9 +21,11 @@
         <% end %>
       <% end %>
     </div>
-    <%= link_to recipe_path(recipe) do %>
-      <img src="<%= recipe.image_url %>"/>
-    <% end %>
+    <div class='img-container'>
+      <%= link_to recipe_path(recipe) do %>
+        <img src="<%= recipe.image_url %>"/>
+      <% end %>
+    </div>
   </div>
   <div class="card-content">
     <h2 class="recipe-title"><%= recipe.name %></h2>
