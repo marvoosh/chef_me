@@ -17,4 +17,12 @@ class PagesController < ApplicationController
       @ingredients = Ingredient.all
     end
   end
+
+  def favourite
+    @favourite_recipes = current_user.saved_recipes.where(favourite: true)
+  end
+
+  def completed
+    @completed_recipes = current_user.saved_recipes.where(completed: true)
+  end
 end

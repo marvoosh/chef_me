@@ -1,1 +1,7 @@
-<h1>Completed Recipes</h1>
+<h1><strong>Completed Recipes</strong></h1>
+
+<% @completed_recipes.each do |completed_recipe| %>
+    <div class="recipe-cards-container">
+      <%= render 'components/card', recipe: completed_recipe.recipe, saved_recipe: completed_recipe %>
+    </div>
+<% end %>
