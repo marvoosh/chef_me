@@ -1,4 +1,7 @@
 // Graphical variables
+/*
+*= require social-share-button
+*/
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
@@ -7,6 +10,7 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "social-share-button";
 
 // Your CSS partials
 @import "components/index";
@@ -18,6 +22,9 @@
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 180px;
 }
 
 h1 {

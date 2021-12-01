@@ -9,6 +9,9 @@ class SavedRecipesController < ApplicationController
     @saved_recipe.user = current_user
     @saved_recipe.save
     render json: @saved_recipe
+    # respond_to do |format|
+    #   format.js
+    # end
     # redirect_back(fallback_location: recipes_path)
   end
 

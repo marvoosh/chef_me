@@ -1,37 +1,38 @@
+<!-- app/views/offers/show.html.erb -->
+<% content_for :meta_title, "#{@recipe.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @recipe.description %>
+<% content_for :meta_image, image_path(@recipe.image_url) %>
+
 <div class="container">
   <div class='back-and-icons'>
     <a onclick="window.history.back()" class='back'>
-      <i class="fas fa-arrow-left" style='margin-top: 10px;'></i>
+      <i class="fas fa-arrow-left" style='margin-top: 20px;'></i>
     </a>
-    <div class='icons'>
+    <div class='icons' data-controller='card-icons'>
       <% if @saved_recipe %>
-        <%= link_to saved_recipe_path(@saved_recipe), method: :delete do %>
-          <i class="fas fa-bookmark"></i>
-        <% end %>
+        <i class="fas fa-bookmark" data-action='click->card-icons#bookmark' data-saved='<%=@saved_recipe.id%>' data-recipe='<%=@recipe.id%>'></i>
       <% else %>
-        <%= link_to recipe_saved_recipes_path(@recipe), method: :post do %>
-          <i class="far fa-bookmark"></i>
-        <% end %>
+        <i class="far fa-bookmark" data-action='click->card-icons#bookmark' data-recipe='<%=@recipe.id%>' data-saved='0'></i>
       <% end %>
-      <%= link_to recipe_saved_recipes_path(@recipe, attribute: :favourite), method: :post do %>
+      <%= link_to recipe_saved_recipes_path(@recipe, attribute: :favourite), method: :post, remote: true do %>
         <% if @saved_recipe && @saved_recipe&.favourite %>
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart" data-action='click->card-icons#favourite'></i>
         <% else %>
-          <i class="far fa-heart"></i>
+          <i class="far fa-heart" data-action='click->card-icons#favourite'></i>
         <% end %>
       <% end %>
-      <%= link_to recipe_saved_recipes_path(@recipe, attribute: :completed), method: :post do %>
+      <%= link_to recipe_saved_recipes_path(@recipe, attribute: :completed), method: :post, remote: true do %>
         <% if @saved_recipe && @saved_recipe&.completed %>
-          <i class="fas fa-check-square"></i>
+          <i class="fas fa-check-square" data-action='click->card-icons#complete'></i>
         <% else %>
-          <i class="far fa-check-square"></i>
+          <i class="far fa-check-square" data-action='click->card-icons#complete'></i>
         <% end %>
       <% end %>
     </div>
   </div>
   <h1 class="name"><%= @recipe.name %></h1>
   <br>
-  <center><%=image_tag @recipe.image_url, class: "container-img image"%></center><br>
+  <center><%=image_tag @recipe.image_url, class: "image"%></center><br>
   <div class="container-flex">
     <div class="container-flex-title">
       <div class="title">
@@ -58,6 +59,9 @@
 </div>
 <br>
 <div class="container text">
+  <div class='social'>
+    <%= social_share_button_tag('Check this recipe:', desc: @recipe.name) %>
+  </div>
   <h2 class="text-left">Ingredients</h2>
   <br>
   <% @ingredients.each do |ingredient| %>

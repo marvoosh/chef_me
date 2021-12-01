@@ -2,32 +2,30 @@
   <div class="card-img">
     <div class='icons' data-controller='card-icons'>
       <% if saved_recipe %>
-        <%= link_to saved_recipe_path(saved_recipe), method: :delete, remote: true, class: 'card-icons' do %>
-          <i class="fas fa-bookmark" data-action='click->card-icons#bookmark' data-saved='<%=saved_recipe.id%>' data-recipe='<%=recipe.id%>'></i>
-        <% end %>
+        <i class="fas fa-bookmark" data-action='click->card-icons#bookmark' data-saved='<%=saved_recipe.id%>' data-recipe='<%=recipe.id%>'></i>
       <% else %>
-        <%= link_to recipe_saved_recipes_path(recipe), method: :post, remote: true, class: 'card-icons' do %>
-          <i class="far fa-bookmark" data-action='click->card-icons#bookmark' data-recipe='<%=recipe.id%>' data-saved='0'></i>
-        <% end %>
+        <i class="far fa-bookmark" data-action='click->card-icons#bookmark' data-recipe='<%=recipe.id%>' data-saved='0'></i>
       <% end %>
       <%= link_to recipe_saved_recipes_path(recipe, attribute: :favourite), method: :post, remote: true, class: 'card-icons' do %>
         <% if saved_recipe&.favourite %>
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart" data-action='click->card-icons#favourite'></i>
         <% else %>
-          <i class="far fa-heart"></i>
+          <i class="far fa-heart" data-action='click->card-icons#favourite'></i>
         <% end %>
       <% end %>
       <%= link_to recipe_saved_recipes_path(recipe, attribute: :completed), method: :post, remote: true, class: 'card-icons' do %>
         <% if saved_recipe&.completed %>
-          <i class="fas fa-check-square"></i>
+          <i class="fas fa-check-square" data-action='click->card-icons#complete'></i>
         <% else %>
-          <i class="far fa-check-square"></i>
+          <i class="far fa-check-square" data-action='click->card-icons#complete'></i>
         <% end %>
       <% end %>
     </div>
-    <%= link_to recipe_path(recipe) do %>
-      <img src="<%= recipe.image_url %>"/>
-    <% end %>
+    <div class='img-container'>
+      <%= link_to recipe_path(recipe) do %>
+        <img src="<%= recipe.image_url %>"/>
+      <% end %>
+    </div>
   </div>
   <div class="card-content">
     <h2 class="recipe-title"><%= recipe.name %></h2>
