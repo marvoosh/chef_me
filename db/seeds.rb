@@ -41,6 +41,7 @@ chilli_powder = Ingredient.create(name: 'chilli powder')
 chilli_flake = Ingredient.create(name: 'chilli flake')
 chive = Ingredient.create(name: 'chive')
 chorizo = Ingredient.create(name: 'chorizo')
+creme_fraiche = Ingredient.create(name: 'creme fraiche')
 dijon = Ingredient.create(name: 'dijon mustard')
 double_cream = Ingredient.create(name: 'double cream')
 eggs = Ingredient.create(name: 'eggs')
@@ -66,6 +67,8 @@ parmesan = Ingredient.create(name: 'parmesan')
 paneer = Ingredient.create(name: 'paneer')
 pepper_flakes = Ingredient.create(name: 'red pepper flakes')
 peas = Ingredient.create(name: 'frozen peas')
+pine_nut = Ingredient.create(name: 'pine nut')
+prawn = Ingredient.create(name: 'prawn')
 pulses = Ingredient.create(name: 'pulses')
 pumpkin_seed = Ingredient.create(name: 'pumbkin seed')
 red_onion = Ingredient.create(name: 'red onion')
@@ -85,9 +88,10 @@ sea_asparagus = Ingredient.create(name: 'sea asparagus')
 thai_chili = Ingredient.create(name: 'Thai chili')
 pasta = Ingredient.create(name: 'pasta')
 pork_sausages = Ingredient.create(name: 'pork and herb sausage')
+ricotta = Ingredient.create(name: 'ricotta')
 tortilla = Ingredient.create(name: 'tortilla')
 tofu = Ingredient.create(name: 'fried tofu')
-tomato = Ingredient.create(name: 'tomato')
+tomato = Ingredient.create(name: 'tomatoes')
 tomato_puree = Ingredient.create(name: 'tomato puree')
 udon = Ingredient.create(name: 'udon noodles')
 vegetable_stock = Ingredient.create(name: 'vegetable stock')
@@ -96,7 +100,7 @@ vodka = Ingredient.create(name: 'vodka')
 water = Ingredient.create(name: 'water')
 walnut = Ingredient.create(name: 'walnut')
 yogurt = Ingredient.create(name: 'yogurt')
-zucchini = Ingredient.create(name: 'zucchini')
+# zucchini = Ingredient.create(name: 'zucchini')
 
 
 puts 'Ingridients finished'
@@ -167,9 +171,19 @@ dressed_beans = Recipe.create(
   cook_time: 20,
   servings: 1,
   cuisine: 'Italian',
-  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/red-pepper-linguine-b431cde.jpg?quality=90&webp=true&resize=300,272',
-  description: 'Dig out a red pepper, linguine, walnuts, garlic and parmesan to make this quick and easy supper.',
-  instructions: '1. Blitz the roasted red pepper with the olive oil, walnuts and garlic in a food processor, season well and set aside.\n2. Bring a pan of salted water to the boil, add the pasta and cook for 1 min less than the pack instructions and drain, reserving a ladleful of cooking water. Tip the pasta back into the pan, along with the reserved cooking water and red pepper sauce, and return to the heat to warm through. Tip the pasta into a bowl and top with the parmesan and some chopped toasted walnuts. Season and serve.'
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/red-pepper-linguine-b431cde.jpg?quality=90&webp=true&resize=440,400',
+  description: 'This fast, fresh pasta sauce with cherry tomatoes, prawns and crème fraîche is ideal for a midweek supper, and it\'s low-fat.',
+  instructions: '1. Heat the oil in a large pan, add the garlic and sizzle for a few mins, then add the courgettes and cook for a few mins more until starting to soften. Cook the pasta following pack instructions.\n2. Add the tomatoes, sugar and seasoning to the pan, stir and simmer, uncovered, for about 10 mins while the pasta cooks.\n3. Add the prawns to the sauce and bubble until they just turn pink. Drain the pasta and add to the sauce with the crème fraîche. Simmer for another 1-2 mins, then add the basil and serve.'
+)
+
+courgette_pasta = Recipe.create(
+  name: 'Courgette & prawn pasta',
+  cook_time: 35,
+  servings: 4,
+  cuisine: 'Italian',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/pasta_3-d8664d4.jpg?quality=90&webp=true&resize=440,400',
+  description: 'Use just a few ingredients to create this no-fuss slow-cooker chicken thigh dish with a creamy honey and mustard sauce.',
+  instructions: '1. Heat the slow cooker. Melt the butter in a frying pan and quickly brown the chicken thighs all over. Make sure the skin picks up plenty of colour. Season, then put them in the slow cooker. Brown the spring onions and add them to the slow cooker as well. Add the stock, mustard and honey and cook on low for 4 hrs.\n2. Stir in the cream or crème fraîche and peas, then cook for a further 15 mins with the lid off. Re-crisp up the chicken skin under the grill, if you like.'
 )
 
 honey_mustard_thighs = Recipe.create(
@@ -192,6 +206,16 @@ mayak_avocado = Recipe.create(
   instructions: '1. Combine chopped garlic, chili, green onion, lemon juice, soy sauce, water, agave nectar, black pepper, and sesame seeds in a large airtight container. Give a good mix.\n2. Cut firm avocado lengthwise around the seed. Open and remove pits from avocados. Cut them into quarters, and carefully peel. Cut avocados into large chunks and add into marinate sauce. Add your choice of diced cucumber or cherry tomatoes.\n3. Carefully cover avocado chunks with marinating, be gentle because avocados are easy to break down. You can serve immediately or cover and marinate for 30 minutes before serving. You can serve by itself as a snack/appetizer, pair with crackers, make avocado toast or serve with warm cooked rice. Enjoy!'
 )
 
+ricotta_pasta = Recipe.create(
+  name: 'Courgette & ricotta pasta',
+  cook_time: 25,
+  servings: 4,
+  cuisine: 'Italian',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-981481_11-f4ebdab.jpg?quality=90&webp=true&resize=440,400',
+  description: 'Soft Italian cheeses like ricotta make a great sauce base when mixed with lemon, greens, herbs and pine nuts',
+  instructions: '1. Heat the oil in a large frying pan. Cook the shallot and courgettes for 8 mins until softened. When they are just beginning to colour, add the garlic and cook for 2 mins more.\n2. Cook the pasta following pack instructions. Drain, reserving a little of the water. Tip the pasta into the courgette pan with the basil, lemon zest, Parmesan and pine nuts. Season, dot over the ricotta and mix gently so that you don’t break it up too much. Serve sprinkled with extra Parmesan, if you like.'
+)
+
  vodka_pasta = Recipe.create(
   name: 'Pasta alla vodka',
   cook_time: 25,
@@ -212,13 +236,13 @@ vegetarian_yaki = Recipe.create(
   instructions: '1. Heat the oil in a non-stick frying pan or wok over a high heat. Add the onion and fry for 5 mins. Stir in the mangetout, corn, pak choi and spring onions and cook for 5 mins more. Add the garlic, curry powder and soy sauce, and cook for another minute.\n2. Add the udon noodles along with the ginger and reserved brine, and stir in 2-3 tbsp hot water until the noodles are heated through. Divide between bowls and serve.'
 )
 
-zucchini_noodles = Recipe.create(
-  name: 'Zucchini Noodles',
+courgette_noodles = Recipe.create(
+  name: 'Courgette Noodles',
   cook_time: 10,
   servings: 3,
   cuisine: 'Asian',
   image_url: 'https://i1.wp.com/photos.smugmug.com/Zucchini-Noodles/i-gwk2BTV/0/01630733/X3/840A8976-X3.jpg?resize=800%2C1200&ssl=1',
-  description: 'Easy Zucchini Noodles Recipe!',
+  description: 'Easy Courgette Noodles Recipe!',
   instructions: '1. Bring a large pot of water to a boil, cook somen by following directions of package you’re using. When somen has 1 minute to finish, add zucchini & onion into pot and boil it together.\n2. Drain and rinse under cold water. Drain completely and place in a large mixing bowl. Add soy sauce, nectar, and chili oil then mix well. Garnish with sesame seeds and enjoy!'
 )
 herby_sausages = Recipe.create(
@@ -292,6 +316,16 @@ orzo_soup = Recipe.create(
   instructions: '1. Heat 1 tbsp olive oil in a large saucepan. Add the onion and celery and fry for 10-15 mins, or until starting to soften, then add the garlic and cook for 1 min more. Stir in all the other ingredients, except for the pesto and remaining oil, and bring to the boil.\n2. Reduce the heat and leave to simmer for 6-8 mins, or until the orzo is tender. Season to taste, then ladle into bowls.\n3. Stir the remaining oil with the pesto, then drizzle over the soup. Serve with chunks of crusty bread.'
 )
 
+summer_pasta = Recipe.create(
+  name: 'Lazy summer pasta',
+  cook_time: 50,
+  servings: 2,
+  cuisine: 'Italian',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-49148_12-3427f2b.jpg?quality=90&webp=true&resize=440,400',
+  description: 'Perfect for those lazy summer evenings, this no-sauce pasta supper could hardly be easier',
+  instructions: '1. Preheat the oven to fan 200C/conventional 220C/gas 7. Put the onion, courgettes and garlic into a large ovenproof dish. Slosh over the olive oil, season well and give everything a quick stir, then roast for 15 minutes. Stir in the tomatoes into the veg and continue roasting for 15 minutes more. At the same time, bring a large pan of salted water to the boil so the sauce and pasta will be finished at the same time.\n2. Drop the pasta into the boiling water and cook according to pack instructions; about 9-12 minutes.\n3. Drain the pasta. Take the vegetables out of the oven and pop the garlic cloves out of their skins. Mash the garlic against the side of the dish and stir through the vegetables. Tip in the pasta and toss everything together, tearing in some basil as you go. Pile into two bowls and serve with grated parmesan.'
+)
+
 mascarpone_risotto = Recipe.create(
   name: 'Tomato and mascarpone risotto',
   cook_time: 40,
@@ -304,6 +338,171 @@ mascarpone_risotto = Recipe.create(
 puts 'Recipes finished'
 
 puts 'Creating recipe_ingridients'
+RecipeIngredient.create(
+  recipe_id: summer_pasta.id,
+  ingredient_id: onion.id,
+  quantity: 1,
+  unit: 'sliced'
+)
+RecipeIngredient.create(
+  recipe_id: summer_pasta.id,
+  ingredient_id: courgette.id,
+  quantity: 2,
+  unit: 'sliced'
+)
+RecipeIngredient.create(
+  recipe_id: summer_pasta.id,
+  ingredient_id: garlic.id,
+  quantity: 3,
+  unit: 'cloves of'
+)
+RecipeIngredient.create(
+  recipe_id: summer_pasta.id,
+  ingredient_id: olive_oil.id,
+  quantity: 3,
+  unit: 'tbsp'
+)
+RecipeIngredient.create(
+  recipe_id: summer_pasta.id,
+  ingredient_id: tomato.id,
+  quantity: 250,
+  unit: 'g'
+)
+RecipeIngredient.create(
+  recipe_id: summer_pasta.id,
+  ingredient_id: pasta.id,
+  quantity: 140,
+  unit: 'g'
+)
+RecipeIngredient.create(
+  recipe_id: summer_pasta.id,
+  ingredient_id: basil.id,
+  quantity: 1,
+  unit: 'handful'
+)
+RecipeIngredient.create(
+  recipe_id: summer_pasta.id,
+  ingredient_id: parmesan.id,
+  quantity: 50,
+  unit: 'g grated'
+)
+
+RecipeIngredient.create(
+  recipe_id: ricotta_pasta.id,
+  ingredient_id: olive_oil.id,
+  quantity: 2,
+  unit: 'tbsp'
+)
+RecipeIngredient.create(
+  recipe_id: ricotta_pasta.id,
+  ingredient_id: onion.id,
+  quantity: 0.5,
+  unit: 'finely chopped'
+)
+RecipeIngredient.create(
+  recipe_id: ricotta_pasta.id,
+  ingredient_id: courgette.id,
+  quantity: 4,
+  unit: 'halved and thinly sliced'
+)
+RecipeIngredient.create(
+  recipe_id: ricotta_pasta.id,
+  ingredient_id: garlic.id,
+  quantity: 3,
+  unit: 'finely chopped cloves of'
+)
+RecipeIngredient.create(
+  recipe_id: ricotta_pasta.id,
+  ingredient_id: pasta.id,
+  quantity: 300,
+  unit: 'g'
+)
+RecipeIngredient.create(
+  recipe_id: ricotta_pasta.id,
+  ingredient_id: basil.id,
+  quantity: 1,
+  unit: 'small bunch'
+)
+RecipeIngredient.create(
+  recipe_id: ricotta_pasta.id,
+  ingredient_id: lemon.id,
+  quantity: 1,
+  unit: 'zest'
+)
+RecipeIngredient.create(
+  recipe_id: ricotta_pasta.id,
+  ingredient_id: parmesan.id,
+  quantity: 50,
+  unit: 'g grated'
+)
+RecipeIngredient.create(
+  recipe_id: ricotta_pasta.id,
+  ingredient_id: pine_nut.id,
+  quantity: 50,
+  unit: 'g toasted'
+)
+RecipeIngredient.create(
+  recipe_id: ricotta_pasta.id,
+  ingredient_id: ricotta.id,
+  quantity: 250,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: courgette_pasta.id,
+  ingredient_id: olive_oil.id,
+  quantity: 1,
+  unit: 'tbsp'
+)
+RecipeIngredient.create(
+  recipe_id: courgette_pasta.id,
+  ingredient_id: garlic.id,
+  quantity: 2,
+  unit: 'sliced cloves of'
+)
+RecipeIngredient.create(
+  recipe_id: courgette_pasta.id,
+  ingredient_id: courgette.id,
+  quantity: 2,
+  unit: 'sliced large'
+)
+RecipeIngredient.create(
+  recipe_id: courgette_pasta.id,
+  ingredient_id: pasta.id,
+  quantity: 400,
+  unit: 'g'
+)
+RecipeIngredient.create(
+  recipe_id: courgette_pasta.id,
+  ingredient_id: tomato.id,
+  quantity: 500,
+  unit: 'g chopped'
+)
+RecipeIngredient.create(
+  recipe_id: courgette_pasta.id,
+  ingredient_id: sugar.id,
+  quantity: 0.25,
+  unit: 'tsp'
+)
+RecipeIngredient.create(
+  recipe_id: courgette_pasta.id,
+  ingredient_id: basil.id,
+  quantity: 1,
+  unit: 'small bunch'
+)
+RecipeIngredient.create(
+  recipe_id: courgette_pasta.id,
+  ingredient_id: prawn.id,
+  quantity: 200,
+  unit: 'g raw'
+)
+RecipeIngredient.create(
+  recipe_id: courgette_pasta.id,
+  ingredient_id: creme_fraiche.id,
+  quantity: 100,
+  unit: 'g'
+)
+
 RecipeIngredient.create(
   recipe_id: quiche_traybake.id,
   ingredient_id: olive_oil.id,
@@ -658,43 +857,43 @@ RecipeIngredient.create(
 )
 
 RecipeIngredient.create(
-  recipe_id: zucchini_noodles.id,
-  ingredient_id: zucchini.id,
+  recipe_id: courgette_noodles.id,
+  ingredient_id: courgette.id,
   quantity: 1,
   unit: 'sliced'
 )
 RecipeIngredient.create(
-  recipe_id: zucchini_noodles.id,
+  recipe_id: courgette_noodles.id,
   ingredient_id: somen.id,
   quantity: 3,
   unit: 'units'
 )
 RecipeIngredient.create(
-  recipe_id: zucchini_noodles.id,
+  recipe_id: courgette_noodles.id,
   ingredient_id: onion.id,
   quantity: 0.5,
   unit: 'sliced'
 )
 RecipeIngredient.create(
-  recipe_id: zucchini_noodles.id,
+  recipe_id: courgette_noodles.id,
   ingredient_id: soy.id,
   quantity: 4,
   unit: 'tbsp'
 )
 RecipeIngredient.create(
-  recipe_id: zucchini_noodles.id,
+  recipe_id: courgette_noodles.id,
   ingredient_id: sugar.id,
   quantity: 2,
   unit: 'tbsp'
 )
 RecipeIngredient.create(
-  recipe_id: zucchini_noodles.id,
+  recipe_id: courgette_noodles.id,
   ingredient_id: chili_oil.id,
   quantity: 3,
   unit: 'tbsp'
 )
 RecipeIngredient.create(
-  recipe_id: zucchini_noodles.id,
+  recipe_id: courgette_noodles.id,
   ingredient_id: sesame.id,
   quantity: 1,
   unit: 'tsp'
@@ -942,6 +1141,12 @@ RecipeIngredient.create(
   quantity: 1,
   unit: 'clove'
 )
+RecipeIngredient.create(
+  recipe_id: kale_pasta.id,
+  ingredient_id: courgette.id,
+  quantity: 1,
+  unit: 'grated'
+)
 
 RecipeIngredient.create(
   recipe_id: kale_pasta.id,
@@ -1051,9 +1256,9 @@ RecipeIngredient.create(
 
 RecipeIngredient.create(
   recipe_id: salmon_pasta.id,
-  ingredient_id: butter.id,
-  quantity: 40,
-  unit: 'g'
+  ingredient_id: olive_oil.id,
+  quantity: 2,
+  unit: 'tbsp'
 )
 
 RecipeIngredient.create(
@@ -1095,6 +1300,12 @@ RecipeIngredient.create(
   recipe_id: salmon_pasta.id,
   ingredient_id: chive.id,
   quantity: 50,
+  unit: 'g'
+)
+RecipeIngredient.create(
+  recipe_id: salmon_pasta.id,
+  ingredient_id: parmesan.id,
+  quantity: 100,
   unit: 'g'
 )
 
