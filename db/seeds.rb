@@ -25,9 +25,11 @@ black_pepper = Ingredient.create(name: 'black pepper')
 broccoli = Ingredient.create(name: 'broccoli')
 butter = Ingredient.create(name: 'butter')
 butter_beans = Ingredient.create(name: 'butter beans')
+bread = Ingredient.create(name: 'bread')
 carrot = Ingredient.create(name: 'carrot')
 canned_tomatoes = Ingredient.create(name: 'canned tomatoes')
 cheddar = Ingredient.create(name: 'cheddar')
+chickpea = Ingredient.create(name: 'chickpea')
 chicken_stock = Ingredient.create(name: 'chicken stock')
 chicken_thighs = Ingredient.create(name: 'chicken thighs')
 coconut_rice = Ingredient.create(name: 'coconut rice')
@@ -52,16 +54,20 @@ red_wine_vinegar = Ingredient.create(name: 'red wine vinegar')
 roasted_red_pepper = Ingredient.create(name: 'roasted red pepper')
 shallot = Ingredient.create(name: 'shallot')
 green_onion = Ingredient.create(name: 'green onion')
+kale = Ingredient.create(name: 'kale')
 lemon = Ingredient.create(name: 'lemon juice')
 mangetout = Ingredient.create(name: 'mangetout')
+mascarpone = Ingredient.create(name: 'mascarpone')
 olive_oil = Ingredient.create(name: 'olive oil')
 onion = Ingredient.create(name: 'onion')
+orzo = Ingredient.create(name: 'orzo pasta')
 pak_choi = Ingredient.create(name: 'pak choi')
-parmesan = Ingredient.create(name: 'parmesan cheese')
+parmesan = Ingredient.create(name: 'parmesan')
 paneer = Ingredient.create(name: 'paneer')
 pepper_flakes = Ingredient.create(name: 'red pepper flakes')
 peas = Ingredient.create(name: 'frozen peas')
 pulses = Ingredient.create(name: 'pulses')
+pumpkin_seed = Ingredient.create(name: 'pumbkin seed')
 red_onion = Ingredient.create(name: 'red onion')
 red_chilli = Ingredient.create(name: 'red chilli')
 salmon = Ingredient.create(name: 'salmon')
@@ -81,6 +87,7 @@ pasta = Ingredient.create(name: 'pasta')
 pork_sausages = Ingredient.create(name: 'pork and herb sausage')
 tortilla = Ingredient.create(name: 'tortilla')
 tofu = Ingredient.create(name: 'fried tofu')
+tomato = Ingredient.create(name: 'tomato')
 tomato_puree = Ingredient.create(name: 'tomato puree')
 udon = Ingredient.create(name: 'udon noodles')
 vegetable_stock = Ingredient.create(name: 'vegetable stock')
@@ -125,6 +132,16 @@ chorizo_risotto = Recipe.create(
   instructions: '1. Heat the oil in a large frying pan, tip in the chorizo and fry until it is crisp and all the oil has been released. Remove a quarter of the chorizo with a slotted spoon and set aside.\n2. Tip the rice into the pan, stir to coat it in the oil and toast for a min or so, then pour in the vinegar. Once the vinegar has evaporated, add a ladleful of the stock, stir then, once absorbed, add a bit more. Continue doing this for about 20 mins until most of the stock has been absorbed and the rice has swollen but still has a slight bite.\n3. Tip in the peas, parmesan and the remaining stock. Give everything a good stir. Once the cheese has melted, season with black pepper, then divide between bowls, topping each portion with the remaining crisp chorizo and extra grated parmesan.'
 )
 
+greek_pie = Recipe.create(
+  name: 'Greek Style Pie',
+  cook_time: 40,
+  servings: 4,
+  cuisine: 'Vegetarian',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-491503_12-f496108.jpg?quality=90&webp=true&resize=300,272',
+  description: 'A good fail-safe for your repertoire',
+  instructions: '1. Put the spinach into a large pan. Pour over a couple tbsp water, then cook until just wilted. Tip into a sieve, leave to cool a little, then squeeze out any excess water and roughly chop. Roughly chop the tomatoes and put into a bowl along with the spinach, feta and eggs. Mix well.\n2. Carefully unroll the filo pastry. Cover with some damp sheets of kitchen paper to stop it drying out. Take a sheet of pastry and brush liberally with some of the sundried tomato oil. Drape oil-side down in a 22cm loosebottomed cake tin so that some of the pastry hangs over the side. Brush oil on another piece of pastry and place in the tin, just a little further round. Keep placing the pastry pieces in the tin until you have roughly three layers, then spoon over the filling. Pull the sides into the middle, scrunch up and make sure the filling is covered. Brush with a little more oil.\n3. Heat oven to 180C/fan 160C/gas 4. Cook the pie for 30 mins until the pastry is crisp and golden brown. Remove from the cake tin, slice into wedges and serve with salad.'
+)
+
 saag = Recipe.create(
   name: 'Saag paneer kedgeree',
   cook_time: 15,
@@ -143,16 +160,6 @@ dressed_beans = Recipe.create(
   image_url: 'https://img.jamieoliver.com/jamieoliver/recipe-database/126291617.jpg?tr=w-800,h-1066',
   description: 'Dressed green beans with garlic and vinegar. Stands alone or as a side dish.',
   instructions: '1. Prep the mixed green and runner beans. Peel the garlic and finely grate into a little jug, add 2 tablespoons each of extra virgin olive oil and red wine vinegar, and a pinch of sea salt and black pepper, then mix well. Cover everything and store overnight.\n2. Cook the beans in a large pan of boiling water for 7 minutes, or until just soft. Drain well, then return to the pan and toss with the dressing. Serve hot or at room temperature.'
-)
-
-greek_pie = Recipe.create(
-  name: 'Greek Style Pie',
-  cook_time: 40,
-  servings: 4,
-  cuisine: 'Vegetarian',
-  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-491503_12-f496108.jpg?quality=90&webp=true&resize=300,272',
-  description: 'A good fail-safe for your repertoire',
-  instructions: '1. Put the spinach into a large pan. Pour over a couple tbsp water, then cook until just wilted. Tip into a sieve, leave to cool a little, then squeeze out any excess water and roughly chop. Roughly chop the tomatoes and put into a bowl along with the spinach, feta and eggs. Mix well.\n2. Carefully unroll the filo pastry. Cover with some damp sheets of kitchen paper to stop it drying out. Take a sheet of pastry and brush liberally with some of the sundried tomato oil. Drape oil-side down in a 22cm loosebottomed cake tin so that some of the pastry hangs over the side. Brush oil on another piece of pastry and place in the tin, just a little further round. Keep placing the pastry pieces in the tin until you have roughly three layers, then spoon over the filling. Pull the sides into the middle, scrunch up and make sure the filling is covered. Brush with a little more oil.\n3. Heat oven to 180C/fan 160C/gas 4. Cook the pie for 30 mins until the pastry is crisp and golden brown. Remove from the cake tin, slice into wedges and serve with salad.'
 )
 
  red_linguine = Recipe.create(
@@ -234,6 +241,17 @@ poke_bowl = Recipe.create(
   instructions: '1. Place sliced onions into ice water and let it sit for 5 to 10 minutes. This way we can reduce pungent raw onion flavor and it will give a refreshing crunch bite.\n2. Combine soy sauce, sesame oil, salt, sesame seeds, red pepper flakes, and msg in a mixing bowl. \n3. Drain onion and tap dry on a paper towel. Add tofu, onion, and sea asparagus into a mixing bowl and give it a toss. Transfer to an air-tight container and place in a refrigerator at least overnight before serving. This poke will last 7 days in a refrigerator. Enjoy with warm cooked rice! '
 )
 
+kale_pasta = Recipe.create(
+  name: 'Pasta with kale sauce',
+  cook_time: 15,
+  servings: 4,
+  cuisine: 'Italian',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/Kale-Pesto-df3faaf.jpg?quality=90&webp=true&resize=300,272',
+  description: 'Whizz up with kale, pumpkin seeds and garlic.',
+  instructions: '1. Bring a pan of water to the boil. Cook the kale for 30 secs, drain and transfer to a bowl of ice-cold water for 5 mins. Drain again and pat dry with kitchen paper.\n2. Put the basil, garlic, seeds, oil, nutritional yeast, lemon juice and zest, and drained kale in a food processor. Blitz until smooth, then season. Loosen with a splash of water, if it’s too thick.\n3. Cook the pasta following pack instructions, then toss with the pesto and serve.'
+)
+
+
 vegetarian_enchiladas = Recipe.create(
   name: 'Vegetarian Enchiladas',
   cook_time: 30,
@@ -254,6 +272,35 @@ vegetarian_enchiladas = Recipe.create(
   instructions: '1. Bring a pan of water to the boil and cook the fusilli according to the pack instructions.\n2. Meanwhile, heat a knob of butter in a saucepan, then add the shallot and cook for 5 mins or until softened.\n3. Add the peas, salmon, crème fraîche and 50ml water. Crumble in the stock cube.\n4. Cook for 3-4 mins until cooked through, stir in the chives and some black pepper. Then stir through to coat the pasta. Serve in bowls.'
 )
 
+bruschetta = Recipe.create(
+  name: 'Tomato bruschetta',
+  cook_time: 15,
+  servings: 4,
+  cuisine: 'Italian',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/bruschetta-recipe-1-2448fad.jpg?quality=90&webp=true&resize=300,272',
+  description: 'Simple Italian starter.',
+  instructions: '1. In a large bowl, mix the onions, tomatoes, garlic and basil, taking care not to mash or break up the tomatoes too much. Add the balsamic vinegar and extra virgin olive oil. Add salt and pepper to taste. Mix again. Cover and chill for at least an hour. This will allow the flavours to soak and blend together.\n2. Slice the baguette loaf diagonally into 12 thick slices and lightly toast them until they are light brown on both sides. Serve the mixture on the warm slices of bread. If you prefer the mixture at room temperature, remove from the fridge half an hour before serving.'
+)
+
+orzo_soup = Recipe.create(
+  name: 'Orzo and tomato soup',
+  cook_time: 30,
+  servings: 4,
+  cuisine: 'Italian',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/tomato-and-orzo-soup-47fe2e7.jpg?quality=90&webp=true&resize=300,272',
+  description: 'Simple, budget friendly and seasonal!',
+  instructions: '1. Heat 1 tbsp olive oil in a large saucepan. Add the onion and celery and fry for 10-15 mins, or until starting to soften, then add the garlic and cook for 1 min more. Stir in all the other ingredients, except for the pesto and remaining oil, and bring to the boil.\n2. Reduce the heat and leave to simmer for 6-8 mins, or until the orzo is tender. Season to taste, then ladle into bowls.\n3. Stir the remaining oil with the pesto, then drizzle over the soup. Serve with chunks of crusty bread.'
+)
+
+mascarpone_risotto = Recipe.create(
+  name: 'Tomato and mascarpone risotto',
+  cook_time: 40,
+  servings: 2,
+  cuisine: 'Italian',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/tomato-mascarpone-risotto-b090efa.jpg?quality=90&webp=true&resize=300,272',
+  description: 'Easy and seasonal risotto.',
+  instructions: '1. Heat the oil in a large, heavy-based saucepan. Add the onion along with a pinch of salt, and fry for 10 mins or until beginning to soften and turn translucent, then add the garlic and fry for 1 min. Stir in the rice and cook for 2 mins.\n2. Tip in the tomatoes and bring to a simmer. Add half the stock, cooking and stirring until absorbed. Add the remaining stock, a ladleful at a time, and cook until the rice is al dente, stirring constantly for around 20 mins.\n3. Stir through the parmesan, mascarpone and basil, and season to taste. Spoon into bowls to serve.'
+)
 puts 'Recipes finished'
 
 puts 'Creating recipe_ingridients'
@@ -874,6 +921,63 @@ RecipeIngredient.create(
   unit: 'tbsp'
 )
 
+
+RecipeIngredient.create(
+  recipe_id: kale_pasta.id,
+  ingredient_id: kale.id,
+  quantity: 150,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: kale_pasta.id,
+  ingredient_id: basil.id,
+  quantity: 50,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: kale_pasta.id,
+  ingredient_id: garlic.id,
+  quantity: 1,
+  unit: 'clove'
+)
+
+RecipeIngredient.create(
+  recipe_id: kale_pasta.id,
+  ingredient_id: pumpkin_seed.id,
+  quantity: 3,
+  unit: 'tbsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: kale_pasta.id,
+  ingredient_id: olive_oil.id,
+  quantity: 5,
+  unit: 'tbsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: kale_pasta.id,
+  ingredient_id: parmesan.id,
+  quantity: 3,
+  unit: 'tbsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: kale_pasta.id,
+  ingredient_id: lemon.id,
+  quantity: 1,
+  unit: 'unit'
+)
+
+RecipeIngredient.create(
+  recipe_id: kale_pasta.id,
+  ingredient_id: pasta.id,
+  quantity: 350,
+  unit: 'g'
+)
+
 RecipeIngredient.create(
   recipe_id: vegetarian_enchiladas.id,
   ingredient_id: olive_oil.id,
@@ -994,6 +1098,187 @@ RecipeIngredient.create(
   unit: 'g'
 )
 
+RecipeIngredient.create(
+  recipe_id: bruschetta.id,
+  ingredient_id: onion.id,
+  quantity: 1,
+  unit: 'unit'
+)
+
+RecipeIngredient.create(
+  recipe_id: bruschetta.id,
+  ingredient_id: tomato.id,
+  quantity: 8,
+  unit: 'units'
+)
+
+RecipeIngredient.create(
+  recipe_id: bruschetta.id,
+  ingredient_id: garlic.id,
+  quantity: 3,
+  unit: 'units'
+)
+
+RecipeIngredient.create(
+  recipe_id: bruschetta.id,
+  ingredient_id: basil.id,
+  quantity: 30,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: bruschetta.id,
+  ingredient_id: vinegar.id,
+  quantity: 30,
+  unit: 'ml'
+)
+
+RecipeIngredient.create(
+  recipe_id: bruschetta.id,
+  ingredient_id: olive_oil.id,
+  quantity: 80,
+  unit: 'ml'
+)
+
+RecipeIngredient.create(
+  recipe_id: bruschetta.id,
+  ingredient_id: bread.id,
+  quantity: 1,
+  unit: 'unit'
+)
+
+RecipeIngredient.create(
+  recipe_id: orzo_soup.id,
+  ingredient_id: olive_oil.id,
+  quantity: 2,
+  unit: 'tbsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: orzo_soup.id,
+  ingredient_id: onion.id,
+  quantity: 1,
+  unit: 'unit'
+)
+
+RecipeIngredient.create(
+  recipe_id: orzo_soup.id,
+  ingredient_id: garlic.id,
+  quantity: 2,
+  unit: 'cloves'
+)
+
+RecipeIngredient.create(
+  recipe_id: orzo_soup.id,
+  ingredient_id: tomato_puree.id,
+  quantity: 1,
+  unit: 'tsbp'
+)
+
+RecipeIngredient.create(
+  recipe_id: orzo_soup.id,
+  ingredient_id: tomato.id,
+  quantity: 400,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: orzo_soup.id,
+  ingredient_id: chickpea.id,
+  quantity: 400,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: orzo_soup.id,
+  ingredient_id: orzo.id,
+  quantity: 150,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: orzo_soup.id,
+  ingredient_id: vegetable_stock.id,
+  quantity: 700,
+  unit: 'ml'
+)
+
+RecipeIngredient.create(
+  recipe_id: orzo_soup.id,
+  ingredient_id: basil.id,
+  quantity: 40,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: orzo_soup.id,
+  ingredient_id: bread.id,
+  quantity: 1,
+  unit: 'unit'
+)
+
+RecipeIngredient.create(
+  recipe_id: mascarpone_risotto.id,
+  ingredient_id: olive_oil.id,
+  quantity: 2,
+  unit: 'tbsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: mascarpone_risotto.id,
+  ingredient_id: onion.id,
+  quantity: 1,
+  unit: 'unit, finely chopped'
+)
+
+RecipeIngredient.create(
+  recipe_id: mascarpone_risotto.id,
+  ingredient_id: garlic.id,
+  quantity: 1,
+  unit: 'clove, crushed'
+)
+
+RecipeIngredient.create(
+  recipe_id: mascarpone_risotto.id,
+  ingredient_id: arborio.id,
+  quantity: 175,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: mascarpone_risotto.id,
+  ingredient_id: tomato.id,
+  quantity: 400,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: mascarpone_risotto.id,
+  ingredient_id: vegetable_stock.id,
+  quantity: 600,
+  unit: 'ml'
+)
+
+RecipeIngredient.create(
+  recipe_id: mascarpone_risotto.id,
+  ingredient_id: parmesan.id,
+  quantity: 30,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: mascarpone_risotto.id,
+  ingredient_id: mascarpone.id,
+  quantity: 30,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: mascarpone_risotto.id,
+  ingredient_id: basil.id,
+  quantity: 30,
+  unit: 'g'
+)
 puts 'Finished recipe_ingridients'
 
 
