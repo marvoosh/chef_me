@@ -19,12 +19,10 @@ class PagesController < ApplicationController
   end
 
   def favourite
-    @recipes = current_user.recipes
-    @saved_recipes = current_user.saved_recipes
+    @favourite_recipes = current_user.saved_recipes.where(favourite: true)
   end
 
   def completed
-    @recipes = current_user.recipes
-    @saved_recipes = current_user.saved_recipes
+    @completed_recipes = current_user.saved_recipes.where(completed: true)
   end
 end

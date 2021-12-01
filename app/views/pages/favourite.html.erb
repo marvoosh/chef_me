@@ -1,8 +1,7 @@
 <h1><strong>Favourites Recipes</strong></h1>
 
-<% @recipes.each do |recipe| %>
-  <% saved_recipe = @saved_recipes.where(user_id: current_user.id, recipe_id: recipe.id, favourite: true)[0] %>
+<% @favourite_recipes.each do |favourite_recipe| %>
     <div class="recipe-cards-container">
-      <%= render 'components/card', recipe: recipe, saved_recipe: saved_recipe %>
+      <%= render 'components/card', recipe: favourite_recipe.recipe, saved_recipe: favourite_recipe %>
     </div>
 <% end %>
