@@ -8,23 +8,23 @@
         <%= image_tag "https://ca.slack-edge.com/T02NE0241-U0289FREFLY-4c0ed7a2ec46-512", class: "avatar dropdown-toggle", id: "navbarDropdown" %>
       </label>
       <nav>
-        <ul class="ulnav">
-          <li class="linav">
+        <ul>
+          <li>
             <%= link_to dashboard_path, class: "navbar-brand" do %>
               <i class="fas fa-bookmark"></i> Saved
             <% end %>
           </li>
-          <li class="linav">
+          <li>
             <%= link_to favourite_path, class: "navbar-brand" do %>
               <i class="fas fa-heart"></i> Favourites
             <% end %>
           </li>
-          <li class="linav">
+          <li>
             <%= link_to completed_path, class: "navbar-brand" do %>
               <i class="fas fa-check-square"></i> Completed
             <% end %>
           </li>
-          <li class="linav" style="margin-top: 550px; border-bottom: 0px; border-top: 1px solid #F4F4F4;">
+          <li style="margin-top: 550px; border-bottom: 0px; border-top: 1px solid #F4F4F4;">
             <%= link_to destroy_user_session_path, method: :delete, class: "navbar-brand" do %>
               <i class="fas fa-sign-out-alt"></i> Log Out
             <% end %>
