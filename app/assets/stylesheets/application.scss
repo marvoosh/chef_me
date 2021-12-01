@@ -6,6 +6,7 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 
+
 // External libraries
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
@@ -19,6 +20,7 @@
 @import "components/container";
 @import "recipes/show";
 @import "components/footer";
+
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
@@ -46,4 +48,36 @@ h2, h3, p {
   @media screen and (min-width: 600px) {
     max-width: 1200px;
   }
+}
+.tab {
+overflow: hidden;
+border: 1px solid #ccc;
+background-color: #f1f1f1;
+}
+
+.tab button {
+background-color: $light-gray;
+float: left;
+border: none;
+outline: none;
+cursor: pointer;
+padding: 3vw 15vw;
+transition: 0.3s;
+// color: white;
+}
+
+.tab button:hover {
+background-color: $gray;
+}
+
+.tab button.active {
+background-color: $dark-green;
+color: white;
+}
+
+.tabcontent {
+display: none;
+padding: 6px 12px;
+// border: 1px solid #ccc;
+border-top: none;
 }

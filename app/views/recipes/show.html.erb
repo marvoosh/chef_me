@@ -58,26 +58,67 @@
 </div>
 </div>
 <br>
-<div class="container text">
-  <div class='social'>
+<div class="container text" >
+   <div class='social'>
     <%= social_share_button_tag('Check this recipe:', desc: @recipe.name) %>
+   </div>
   </div>
-  <h2 class="text-left">Ingredients</h2>
-  <br>
-  <% @ingredients.each do |ingredient| %>
-    <li><% if ingredient.quantity.to_s[-1]=='0' %>
-        <%= ingredient.quantity.round %>
-      <% else %>
-        <%= ingredient.quantity %>
+<div class="row tab">
+<div style="margin: auto;">
+<button style="float:none" class="tablinks active" onclick="openCity(event, 'Ingredients')">Ingredients</button>
+<button style="float:none" class="tablinks" onclick="openCity(event, 'Instructions')">Instructions</button>
+</div>
+</div>
+
+<!-- Tab content -->
+<div id="Ingredients" class="tabcontent" style="display:block" >
+    <div class="col-sm-6">
+      <%# <h2 class="text-left">Ingredients</h2> %>
+      <% @ingredients.each do |ingredient| %>
+        <% if ingredient.quantity.to_s[-1]=='0' %>
+            <p><%= ingredient.quantity.round %>
+          <% else %>
+            <%= ingredient.quantity %>
+          <% end %>
+            <%= ingredient.unit %>
+            <%= ingredient.ingredient.name %>  </p>
       <% end %>
-      <%= ingredient.unit %>
-      <%= ingredient.ingredient.name %>
-    </li>
-  <% end %>
-  <br>
-  <h2 class="text-left">Instructions</h2>
-  <br>
-  <% @instructions.each do |instruction| %>
-    <p><%= instruction %></p>
-  <% end %>
-  <br>
+
+    </div>
+</div>
+
+<div id="Instructions" class="tabcontent" >
+   <div class="col-sm-6">
+      <%# <h2 class="text-left">Instructions</h2> %>
+      <% @instructions.each do |instruction| %>
+        <p><%= instruction %></p>
+      <% end %>
+    </div>
+</div>
+
+</div>
+</div>
+
+
+<script>
+function openCity(evt, cityName) {
+// Declare all variables
+var i, tabcontent, tablinks;
+
+// Get all elements with class="tabcontent" and hide them
+tabcontent = document.getElementsByClassName("tabcontent");
+for (i = 0; i < tabcontent.length; i++) {
+tabcontent[i].style.display = "none";
+}
+
+// Get all elements with class="tablinks" and remove the class "active"
+tablinks = document.getElementsByClassName("tablinks");
+for (i = 0; i < tablinks.length; i++) {
+tablinks[i].className = tablinks[i].className.replace(" active", "");
+}
+
+// Show the current tab, and add an "active" class to the button that opened the tab
+document.getElementById(cityName).style.display = "block";
+evt.currentTarget.className += " active";
+}
+</script>

@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require('./social-share-button')
+// require('./recpies_show')
 
 import "bootstrap"
 
@@ -19,3 +20,4 @@ import "bootstrap"
 // const imagePath = (name) => images(name, true)
 
 import "controllers"
+import "recpies_show"
