@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'pages#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   get 'search', to: 'pages#search'
+  get 'favourite', to: 'pages#favourite'
+  get 'completed', to: 'pages#completed'
 end
