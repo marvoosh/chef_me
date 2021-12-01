@@ -20,4 +20,4 @@ import "bootstrap"
 // const imagePath = (name) => images(name, true)
 
 import "controllers"
-import "recpies_show"
+// import "recpies_show"
