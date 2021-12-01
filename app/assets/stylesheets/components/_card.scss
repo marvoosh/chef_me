@@ -36,6 +36,7 @@ h1 {
   .recipe-title {
     margin-top: 12px;
     color: $green;
+    // text-align: center;
   }
 
   .recipe-details {
@@ -47,6 +48,7 @@ h1 {
       flex: 1;
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
 
     .title {
@@ -56,7 +58,7 @@ h1 {
 
 
     .ingredients {
-    // border: 1px solid red;
+      // border: 1px solid red;
       padding-left: 12px;
     }
 
