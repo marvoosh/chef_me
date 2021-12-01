@@ -20,24 +20,37 @@ puts 'Creating ingridients'
 avocado = Ingredient.create(name: 'avocado')
 arborio = Ingredient.create(name: 'arborio rice')
 baby_corn = Ingredient.create(name: 'baby corn')
+basil = Ingredient.create(name: 'basil')
 black_pepper = Ingredient.create(name: 'black pepper')
 broccoli = Ingredient.create(name: 'broccoli')
+butter = Ingredient.create(name: 'butter')
+butter_beans = Ingredient.create(name: 'butter beans')
 carrot = Ingredient.create(name: 'carrot')
 canned_tomatoes = Ingredient.create(name: 'canned tomatoes')
 cheddar = Ingredient.create(name: 'cheddar')
 chicken_stock = Ingredient.create(name: 'chicken stock')
+chicken_thighs = Ingredient.create(name: 'chicken thighs')
+coconut_rice = Ingredient.create(name: 'coconut rice')
 cucumber = Ingredient.create(name: 'cucumber')
 curry = Ingredient.create(name: 'curry powder')
 courgette = Ingredient.create(name: 'courgette')
 chili_oil = Ingredient.create(name: 'chili oil')
 chilli_powder = Ingredient.create(name: 'chilli powder')
+chilli_flake = Ingredient.create(name: 'chilli flake')
+chive = Ingredient.create(name: 'chive')
 chorizo = Ingredient.create(name: 'chorizo')
+dijon = Ingredient.create(name: 'dijon mustard')
+double_cream = Ingredient.create(name: 'double cream')
 eggs = Ingredient.create(name: 'eggs')
 feta = Ingredient.create(name: 'feta cheese')
 filo = Ingredient.create(name: 'filo pastry')
 garlic = Ingredient.create(name: 'garlic')
+greens = Ingredient.create(name: 'greens')
 green_beans = Ingredient.create(name: 'green beans')
+honey = Ingredient.create(name: 'honey')
 red_wine_vinegar = Ingredient.create(name: 'red wine vinegar')
+roasted_red_pepper = Ingredient.create(name: 'roasted red pepper')
+shallot = Ingredient.create(name: 'shallot')
 green_onion = Ingredient.create(name: 'green onion')
 lemon = Ingredient.create(name: 'lemon juice')
 mangetout = Ingredient.create(name: 'mangetout')
@@ -45,10 +58,13 @@ olive_oil = Ingredient.create(name: 'olive oil')
 onion = Ingredient.create(name: 'onion')
 pak_choi = Ingredient.create(name: 'pak choi')
 parmesan = Ingredient.create(name: 'parmesan cheese')
+paneer = Ingredient.create(name: 'paneer')
 pepper_flakes = Ingredient.create(name: 'red pepper flakes')
 peas = Ingredient.create(name: 'frozen peas')
 pulses = Ingredient.create(name: 'pulses')
 red_onion = Ingredient.create(name: 'red onion')
+red_chilli = Ingredient.create(name: 'red chilli')
+salmon = Ingredient.create(name: 'salmon')
 soy = Ingredient.create(name: 'soy sauce')
 somen = Ingredient.create(name: 'somen noodles')
 sugar = Ingredient.create(name: 'sugar')
@@ -61,16 +77,32 @@ sundried_tomato = Ingredient.create(name: sundried_tomato)
 sushi_ginger = Ingredient.create(name: 'pickled sushi ginger')
 sea_asparagus = Ingredient.create(name: 'sea asparagus')
 thai_chili = Ingredient.create(name: 'Thai chili')
+pasta = Ingredient.create(name: 'pasta')
+pork_sausages = Ingredient.create(name: 'pork and herb sausage')
 tortilla = Ingredient.create(name: 'tortilla')
 tofu = Ingredient.create(name: 'fried tofu')
+tomato_puree = Ingredient.create(name: 'tomato puree')
 udon = Ingredient.create(name: 'udon noodles')
+vegetable_stock = Ingredient.create(name: 'vegetable stock')
 vinegar = Ingredient.create(name: 'vinegar')
+vodka = Ingredient.create(name: 'vodka')
 water = Ingredient.create(name: 'water')
+walnut = Ingredient.create(name: 'walnut')
 yogurt = Ingredient.create(name: 'yogurt')
 zucchini = Ingredient.create(name: 'zucchini')
 
 
 puts 'Ingridients finished'
+
+#  = Recipe.create(
+#   name: '',
+#   cook_time: ,
+#   servings: ,
+#   cuisine: '',
+#   image_url: '',
+#   description: '',
+#   instructions: ''
+# )
 
 puts 'Creating recipes'
 quiche_traybake = Recipe.create(
@@ -93,6 +125,16 @@ chorizo_risotto = Recipe.create(
   instructions: '1. Heat the oil in a large frying pan, tip in the chorizo and fry until it is crisp and all the oil has been released. Remove a quarter of the chorizo with a slotted spoon and set aside.\n2. Tip the rice into the pan, stir to coat it in the oil and toast for a min or so, then pour in the vinegar. Once the vinegar has evaporated, add a ladleful of the stock, stir then, once absorbed, add a bit more. Continue doing this for about 20 mins until most of the stock has been absorbed and the rice has swollen but still has a slight bite.\n3. Tip in the peas, parmesan and the remaining stock. Give everything a good stir. Once the cheese has melted, season with black pepper, then divide between bowls, topping each portion with the remaining crisp chorizo and extra grated parmesan.'
 )
 
+saag = Recipe.create(
+  name: 'Saag paneer kedgeree',
+  cook_time: 15,
+  servings: 2,
+  cuisine: 'South-Asian',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/saag-paneer-kedgeree-86c48c0.jpg?quality=90&webp=true&resize=300,272',
+  description: 'Combine two Indian-inspired classics in this paneer and kedgeree mash-up.',
+  instructions: '1. Bring a medium pan of water to the boil. Add the eggs and cook for 7 mins, then put them in a bowl of cold water and set aside.\n2. Meanwhile, drizzle the oil in a large non-stick frying pan or shallow casserole dish. Add the onion and fry over a medium-high heat for 5 mins. Tip in the paneer and fry for 5 mins or until evenly browned and the onion is beginning to caramelise.\n3. Add the curry powder and fry for 1 min, then add the spinach. Cover with a lid and cook for a few mins to allow the spinach to defrost. Uncover, add the rice, turn up the heat and cook for a few mins more or until everything is piping hot. Season. Peel the eggs, halve and place on top of the rice. Finish with a scattering of chilli, if you like.'
+)
+
 dressed_beans = Recipe.create(
   name: 'Dressed beans',
   cook_time: 15,
@@ -113,6 +155,26 @@ greek_pie = Recipe.create(
   instructions: '1. Put the spinach into a large pan. Pour over a couple tbsp water, then cook until just wilted. Tip into a sieve, leave to cool a little, then squeeze out any excess water and roughly chop. Roughly chop the tomatoes and put into a bowl along with the spinach, feta and eggs. Mix well.\n2. Carefully unroll the filo pastry. Cover with some damp sheets of kitchen paper to stop it drying out. Take a sheet of pastry and brush liberally with some of the sundried tomato oil. Drape oil-side down in a 22cm loosebottomed cake tin so that some of the pastry hangs over the side. Brush oil on another piece of pastry and place in the tin, just a little further round. Keep placing the pastry pieces in the tin until you have roughly three layers, then spoon over the filling. Pull the sides into the middle, scrunch up and make sure the filling is covered. Brush with a little more oil.\n3. Heat oven to 180C/fan 160C/gas 4. Cook the pie for 30 mins until the pastry is crisp and golden brown. Remove from the cake tin, slice into wedges and serve with salad.'
 )
 
+ red_linguine = Recipe.create(
+  name: 'Red pepper linguine',
+  cook_time: 20,
+  servings: 1,
+  cuisine: 'Italian',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/red-pepper-linguine-b431cde.jpg?quality=90&webp=true&resize=300,272',
+  description: 'Dig out a red pepper, linguine, walnuts, garlic and parmesan to make this quick and easy supper.',
+  instructions: '1. Blitz the roasted red pepper with the olive oil, walnuts and garlic in a food processor, season well and set aside.\n2. Bring a pan of salted water to the boil, add the pasta and cook for 1 min less than the pack instructions and drain, reserving a ladleful of cooking water. Tip the pasta back into the pan, along with the reserved cooking water and red pepper sauce, and return to the heat to warm through. Tip the pasta into a bowl and top with the parmesan and some chopped toasted walnuts. Season and serve.'
+)
+
+honey_mustard_thighs = Recipe.create(
+  name: 'Honey mustard chicken thighs',
+  cook_time: 240,
+  servings: 4,
+  cuisine: 'Seasonal',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/honey-mustard-chicken-f111be8.jpg?quality=90&webp=true&resize=300,272',
+  description: 'Use just a few ingredients to create this no-fuss slow-cooker chicken thigh dish with a creamy honey and mustard sauce.',
+  instructions: '1. Heat the slow cooker. Melt the butter in a frying pan and quickly brown the chicken thighs all over. Make sure the skin picks up plenty of colour. Season, then put them in the slow cooker. Brown the spring onions and add them to the slow cooker as well. Add the stock, mustard and honey and cook on low for 4 hrs.\n2. Stir in the cream or crème fraîche and peas, then cook for a further 15 mins with the lid off. Re-crisp up the chicken skin under the grill, if you like.'
+)
+
 mayak_avocado = Recipe.create(
   name: 'Mayak Avocado',
   cook_time: 20,
@@ -121,6 +183,16 @@ mayak_avocado = Recipe.create(
   image_url: 'https://i1.wp.com/photos.smugmug.com/Mayak-Avocado/i-DhXXCbB/0/5353428c/X3/840A9833-X3.jpg?resize=800%2C1200&ssl=1',
   description: 'Mayak Avocado, Korean Marinated Avocado Recipe! This simple,\neasy & quick avocado recipe will change your life!',
   instructions: '1. Combine chopped garlic, chili, green onion, lemon juice, soy sauce, water, agave nectar, black pepper, and sesame seeds in a large airtight container. Give a good mix.\n2. Cut firm avocado lengthwise around the seed. Open and remove pits from avocados. Cut them into quarters, and carefully peel. Cut avocados into large chunks and add into marinate sauce. Add your choice of diced cucumber or cherry tomatoes.\n3. Carefully cover avocado chunks with marinating, be gentle because avocados are easy to break down. You can serve immediately or cover and marinate for 30 minutes before serving. You can serve by itself as a snack/appetizer, pair with crackers, make avocado toast or serve with warm cooked rice. Enjoy!'
+)
+
+ vodka_pasta = Recipe.create(
+  name: 'Pasta alla vodka',
+  cook_time: 25,
+  servings: 2,
+  cuisine: 'Italian',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2021/04/Pasta-alla-vodka-f1d2e1c.jpg?quality=90&webp=true&resize=300,272',
+  description: 'Sit back and tuck into a big bowl of pasta alla vodka, a creamy tomato pasta with – as you can guess – vodka, which balances out the intense flavours',
+  instructions: '1. Heat the oil in a large frying pan or casserole dish. Add the shallot and a large pinch of salt and gently fry over a low heat for 10 mins or until softened and translucent. Add the garlic and chilli flakes and cook for 30 seconds. Stir through the tomato purée, cook for 2 mins, then stir through the vodka and cook for 3 mins. Quickly stir through the cream to combine, then remove from the heat.\n2. Cook the pasta in salted water following pack instructions. Drain and reserve 150ml cooking water. Add roughly 50ml of the water to the tomato sauce, then tip in the pasta and cheese, tossing everything together over a low heat until well coated and glossy (loosen with a splash more of the cooking water if it’s a little dry). Season to taste, then serve with a sprinkling of the extra parmesan, a good grinding of black pepper and the basil leaves scattered over the top.'
 )
 
 vegetarian_yaki = Recipe.create(
@@ -142,6 +214,16 @@ zucchini_noodles = Recipe.create(
   description: 'Easy Zucchini Noodles Recipe!',
   instructions: '1. Bring a large pot of water to a boil, cook somen by following directions of package you’re using. When somen has 1 minute to finish, add zucchini & onion into pot and boil it together.\n2. Drain and rinse under cold water. Drain completely and place in a large mixing bowl. Add soy sauce, nectar, and chili oil then mix well. Garnish with sesame seeds and enjoy!'
 )
+herby_sausages = Recipe.create(
+  name: 'Herby sausages with butten bean mash',
+  cook_time: 20,
+  servings: 2,
+  cuisine: 'Britsh',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/sausages-with-butter-bean-mash-b841f22.jpg?quality=90&webp=true&resize=300,272',
+  description: 'Just a few ingredients make up this midweek meal that takes just 10 minutes prep!',
+  instructions: '1. Heat grill to high. Brush 1 tbsp oil over the sausages, and grill on a tray for 20 mins, turning regularly.\n2. Meanwhile, heat the rest of the oil in a saucepan over a low heat. Add most of the spring onion and cook for 5 mins until softened. Add the beans, garlic, and lemon zest and juice, cook for a few mins more, then gently mash with a potato masher to get a thick, creamy consistency. Season and cook for 5 mins more until warmed through. Scatter over the remaining spring onion and serve with the sausages and wilted greens.'
+)
+
 poke_bowl = Recipe.create(
   name: 'Tofu Poke Bowl',
   cook_time: 15,
@@ -161,6 +243,17 @@ vegetarian_enchiladas = Recipe.create(
   description: 'Healthy Vegetarian Enchiladas!',
   instructions: '1. Heat the oil in a large frying pan. Cook the onions and carrots for 5-8 mins until soft – add a splash of water if they start to stick. Sprinkle in the chilli powder and cook for 1 min more. Pour in the tomatoes and pulses and bring to the boil. Turn down the heat and simmer for 5-10 mins, stirring occasionally, until thickened. Remove from the heat and season well.\n2. Heat grill to high. Spread a spoonful of the bean chilli over a large ovenproof dish. Lay each tortilla onto a board, fill with a few tbsp of chilli mixture, fold over the ends and roll up to seal. Place them into the ovenproof dish. Spoon the remaining chilli on top.\n3. Mix the yogurt and grated cheese together with some seasoning, and spoon over the enchiladas. Grill for a few mins until the top is golden and bubbling. Serve with a green salad.'
 )
+
+ salmon_pasta = Recipe.create(
+  name: 'Pasta with salmon and peas',
+  cook_time: 15,
+  servings: 3,
+  cuisine: 'Italian',
+  image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/salmonpasta-11bb3f0.jpg?quality=90&webp=true&resize=300,272',
+  description: 'Quick and easy dinner.',
+  instructions: '1. Bring a pan of water to the boil and cook the fusilli according to the pack instructions.\n2. Meanwhile, heat a knob of butter in a saucepan, then add the shallot and cook for 5 mins or until softened.\n3. Add the peas, salmon, crème fraîche and 50ml water. Crumble in the stock cube.\n4. Cook for 3-4 mins until cooked through, stir in the chives and some black pepper. Then stir through to coat the pasta. Serve in bowls.'
+)
+
 puts 'Recipes finished'
 
 puts 'Creating recipe_ingridients'
@@ -245,6 +338,104 @@ RecipeIngredient.create(
 )
 
 RecipeIngredient.create(
+  recipe_id: red_linguine.id,
+  ingredient_id: roasted_red_pepper.id,
+  quantity: 1,
+  unit: 'unit'
+)
+
+RecipeIngredient.create(
+  recipe_id: red_linguine.id,
+  ingredient_id: walnut.id,
+  quantity: 50,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: red_linguine.id,
+  ingredient_id: olive_oil.id,
+  quantity: 30,
+  unit: 'ml'
+)
+
+RecipeIngredient.create(
+  recipe_id: red_linguine.id,
+  ingredient_id: garlic.id,
+  quantity: 1,
+  unit: 'unit'
+)
+
+RecipeIngredient.create(
+  recipe_id: red_linguine.id,
+  ingredient_id: pasta.id,
+  quantity: 100,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: red_linguine.id,
+  ingredient_id: parmesan.id,
+  quantity: 80,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: honey_mustard_thighs.id,
+  ingredient_id: butter.id,
+  quantity: 1,
+  unit: 'tbsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: honey_mustard_thighs.id,
+  ingredient_id: chicken_thighs.id,
+  quantity: 8,
+  unit: 'units'
+)
+
+RecipeIngredient.create(
+  recipe_id: honey_mustard_thighs.id,
+  ingredient_id: spring_onion.id,
+  quantity: 8,
+  unit: 'units'
+)
+
+RecipeIngredient.create(
+  recipe_id: honey_mustard_thighs.id,
+  ingredient_id: chicken_stock.id,
+  quantity: 150,
+  unit: 'ml'
+)
+
+RecipeIngredient.create(
+  recipe_id: honey_mustard_thighs.id,
+  ingredient_id: dijon.id,
+  quantity: 1,
+  unit: 'tbsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: honey_mustard_thighs.id,
+  ingredient_id: honey.id,
+  quantity: 2,
+  unit: 'tbsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: honey_mustard_thighs.id,
+  ingredient_id: double_cream.id,
+  quantity: 2,
+  unit: 'tbsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: honey_mustard_thighs.id,
+  ingredient_id: peas.id,
+  quantity: 100,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
   recipe_id: chorizo_risotto.id,
   ingredient_id: olive_oil.id,
   quantity: 1,
@@ -292,6 +483,15 @@ RecipeIngredient.create(
   quantity: 60,
   unit: 'g'
 )
+ 8.times do
+    ingredient = Ingredient.create(name: Faker::Food.ingredient.downcase)
+    RecipeIngredient.create(
+      recipe_id: saag.id,
+      ingredient_id: ingredient.id,
+      quantity: [0.5, 1, 2, 3].sample,
+      unit: ['cup', 'tsp', 'tbsp', 'ml', 'gr'].sample
+    )
+  end
 
 RecipeIngredient.create(
   recipe_id: dressed_beans.id,
@@ -316,6 +516,55 @@ RecipeIngredient.create(
   ingredient_id: red_wine_vinegar.id,
   quantity: 2,
   unit: 'tbsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: herby_sausages.id,
+  ingredient_id: olive_oil.id,
+  quantity: 3,
+  unit: 'tbsps'
+)
+
+RecipeIngredient.create(
+  recipe_id: herby_sausages.id,
+  ingredient_id: pork_sausages.id,
+  quantity: 4,
+  unit: 'units'
+)
+
+RecipeIngredient.create(
+  recipe_id: herby_sausages.id,
+  ingredient_id: spring_onion.id,
+  quantity: 8,
+  unit: 'units'
+)
+
+RecipeIngredient.create(
+  recipe_id: herby_sausages.id,
+  ingredient_id: butter_beans.id,
+  quantity: 800,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: herby_sausages.id,
+  ingredient_id: garlic.id,
+  quantity: 1,
+  unit: 'clove'
+)
+
+RecipeIngredient.create(
+  recipe_id: herby_sausages.id,
+  ingredient_id: lemon.id,
+  quantity: 1,
+  unit: 'unit'
+)
+
+RecipeIngredient.create(
+  recipe_id: herby_sausages.id,
+  ingredient_id: greens.id,
+  quantity: 300,
+  unit: 'g'
 )
 
 RecipeIngredient.create(
@@ -410,6 +659,77 @@ RecipeIngredient.create(
   quantity: 1,
   unit: 'tbsp'
 )
+
+RecipeIngredient.create(
+  recipe_id: vodka_pasta.id,
+  ingredient_id: olive_oil.id,
+  quantity: 2,
+  unit: 'tbsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: vodka_pasta.id,
+  ingredient_id: shallot.id,
+  quantity: 1,
+  unit: 'unit'
+)
+
+RecipeIngredient.create(
+  recipe_id: vodka_pasta.id,
+  ingredient_id: garlic.id,
+  quantity: 3,
+  unit: 'units'
+)
+
+RecipeIngredient.create(
+  recipe_id: vodka_pasta.id,
+  ingredient_id: chilli_flake.id,
+  quantity: 1/4,
+  unit: 'tsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: vodka_pasta.id,
+  ingredient_id: tomato_puree.id,
+  quantity: 100,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: vodka_pasta.id,
+  ingredient_id: vodka.id,
+  quantity: 5,
+  unit: 'tbsp'
+)
+
+RecipeIngredient.create(
+  recipe_id: vodka_pasta.id,
+  ingredient_id: double_cream.id,
+  quantity: 100,
+  unit: 'ml'
+)
+
+RecipeIngredient.create(
+  recipe_id: vodka_pasta.id,
+  ingredient_id: pasta.id,
+  quantity: 200,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: vodka_pasta.id,
+  ingredient_id: parmesan.id,
+  quantity: 30,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: vodka_pasta.id,
+  ingredient_id: basil.id,
+  quantity: 40,
+  unit: 'g'
+)
+
 RecipeIngredient.create(
   recipe_id: mayak_avocado.id,
   ingredient_id: thai_chili.id,
@@ -618,14 +938,70 @@ RecipeIngredient.create(
   unit: 'g'
 )
 
+RecipeIngredient.create(
+  recipe_id: salmon_pasta.id,
+  ingredient_id: pasta.id,
+  quantity: 240,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: salmon_pasta.id,
+  ingredient_id: butter.id,
+  quantity: 40,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: salmon_pasta.id,
+  ingredient_id: shallot.id,
+  quantity: 1,
+  unit: 'unit'
+)
+
+RecipeIngredient.create(
+  recipe_id: salmon_pasta.id,
+  ingredient_id: peas.id,
+  quantity: 140,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: salmon_pasta.id,
+  ingredient_id: salmon.id,
+  quantity: 2,
+  unit: 'units'
+)
+
+RecipeIngredient.create(
+  recipe_id: salmon_pasta.id,
+  ingredient_id: double_cream.id,
+  quantity: 140,
+  unit: 'g'
+)
+
+RecipeIngredient.create(
+  recipe_id: salmon_pasta.id,
+  ingredient_id: vegetable_stock.id,
+  quantity: 150,
+  unit: 'ml'
+)
+
+RecipeIngredient.create(
+  recipe_id: salmon_pasta.id,
+  ingredient_id: chive.id,
+  quantity: 50,
+  unit: 'g'
+)
+
 puts 'Finished recipe_ingridients'
 
 
 # puts 'faker seed'
-# 30.times do
+# 15.times do
 #   name = Faker::Food.dish
 #   name_file = name.split.join('_')
-#   file = URI.open("https://loremflickr.com/320/240/#{name_file}")
+#   file = URI.open("https://source.unsplash.com/random/1920x1080/?#{name}")
 #   cuisine, = Faker::Food.ethnic_category.split
 #   recipe = Recipe.create(
 #     name: name,
