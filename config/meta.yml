@@ -3,5 +3,5 @@
 meta_product_name: "ChefMe"
 meta_title: "ChefMe - Let your inner chef out!"
 meta_description: "What's in your fridge? Let's cook!"
-meta_image: "metaimage.png" # should exist in `app/assets/images/`
+meta_image: "Frame 1teste.jpg" # should exist in `app/assets/images/`
 # twitter_account: "@product_twitter_account"   # required for Twitter Cards
