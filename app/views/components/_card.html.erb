@@ -20,6 +20,7 @@
           <i class="far fa-check-square" data-action='click->card-icons#complete'></i>
         <% end %>
       <% end %>
+
     </div>
     <div class='img-container'>
       <%= link_to recipe_path(recipe) do %>
@@ -29,6 +30,8 @@
   </div>
   <div class="card-content">
     <h2 class="recipe-title"><%= recipe.name %></h2>
+    <strong><%= recipe.cuisine %> </strong>
+
     <hr>
     <div class="recipe-details">
       <div class="recipe-details-item time">
