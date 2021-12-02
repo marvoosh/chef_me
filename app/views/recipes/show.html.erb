@@ -57,17 +57,7 @@
     </div>
   </div>
 </div><hr>
-  <center><p><%= @recipe.description %></p></center>
-
-<hr>
 </div>
-<br>
-<div class="container text" >
-
-   <div class='social'>
-    <%= social_share_button_tag('Check this recipe:', desc: @recipe.name) %>
-   </div>
-  </div>
 <div class="row tab">
 <div style="margin: auto;">
 <button style="float:none" class="tablinks active" onclick="openCity(event, 'Ingredients')">Ingredients</button>
@@ -100,6 +90,14 @@
       <% end %>
     </div>
 </div>
+
+<hr>
+<div class="container text" >
+   <div class='social'>
+    <%= social_share_button_tag('Check this recipe:', desc: @recipe.name) %>
+   </div>
+</div>
+<hr>
 
 </div>
 </div>
