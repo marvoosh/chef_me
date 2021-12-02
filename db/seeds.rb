@@ -19,6 +19,7 @@ user2 = User.create(first_name: 'Thallia', last_name: 'Rosa', email: 'lia@test.c
 puts 'Creating ingridients'
 avocado = Ingredient.create(name: 'avocado')
 arborio = Ingredient.create(name: 'arborio rice')
+asparagus = Ingredient.create(name: 'asparagus')
 baby_corn = Ingredient.create(name: 'baby corn')
 basil = Ingredient.create(name: 'basil')
 black_pepper = Ingredient.create(name: 'black pepper')
@@ -89,6 +90,7 @@ thai_chili = Ingredient.create(name: 'Thai chili')
 pasta = Ingredient.create(name: 'pasta')
 pork_sausages = Ingredient.create(name: 'pork and herb sausage')
 ricotta = Ingredient.create(name: 'ricotta')
+radish = Ingredient.create(name: 'radishes')
 tortilla = Ingredient.create(name: 'tortilla')
 tofu = Ingredient.create(name: 'fried tofu')
 tomato = Ingredient.create(name: 'tomatoes')
@@ -265,6 +267,16 @@ poke_bowl = Recipe.create(
   instructions: '1. Place sliced onions into ice water and let it sit for 5 to 10 minutes. This way we can reduce pungent raw onion flavor and it will give a refreshing crunch bite.\n2. Combine soy sauce, sesame oil, salt, sesame seeds, red pepper flakes, and msg in a mixing bowl. \n3. Drain onion and tap dry on a paper towel. Add tofu, onion, and sea asparagus into a mixing bowl and give it a toss. Transfer to an air-tight container and place in a refrigerator at least overnight before serving. This poke will last 7 days in a refrigerator. Enjoy with warm cooked rice! '
 )
 
+raw_salad = Recipe.create(
+  name: 'Raw spring salad',
+  cook_time: 15,
+  servings: 4,
+  cuisine: 'Seasonal',
+  image_url: 'https://img.jamieoliver.com/jamieoliver/recipe-database/5IpZAvgW4pI9RN8dfL09hO.jpg?tr=w-800,h-1066',
+  description: 'Super fresh, perfect as a side!',
+  instructions: '1. Prepare a large bowl of iced water.\n2. Speed-peel the asparagus, radishes and courgettes into ribbons. Place in the iced water.\n3. Pick and finely chop the mint and dill, and place in a bowl. Squeeze in the juice of the lemon, drizzle over a little oil and season well.\n4. Remove the vegetables from the water and spin until dry. Place in the bowl with the dressing, toss well and serve.'
+)
+
 kale_pasta = Recipe.create(
   name: 'Pasta with kale sauce',
   cook_time: 15,
@@ -274,7 +286,6 @@ kale_pasta = Recipe.create(
   description: 'Whizz up with kale, pumpkin seeds and garlic.',
   instructions: '1. Bring a pan of water to the boil. Cook the kale for 30 secs, drain and transfer to a bowl of ice-cold water for 5 mins. Drain again and pat dry with kitchen paper.\n2. Put the basil, garlic, seeds, oil, nutritional yeast, lemon juice and zest, and drained kale in a food processor. Blitz until smooth, then season. Loosen with a splash of water, if it’s too thick.\n3. Cook the pasta following pack instructions, then toss with the pesto and serve.'
 )
-
 
 vegetarian_enchiladas = Recipe.create(
   name: 'Vegetarian Enchiladas',
@@ -335,9 +346,100 @@ mascarpone_risotto = Recipe.create(
   description: 'Easy and seasonal risotto.',
   instructions: '1. Heat the oil in a large, heavy-based saucepan. Add the onion along with a pinch of salt, and fry for 10 mins or until beginning to soften and turn translucent, then add the garlic and fry for 1 min. Stir in the rice and cook for 2 mins.\n2. Tip in the tomatoes and bring to a simmer. Add half the stock, cooking and stirring until absorbed. Add the remaining stock, a ladleful at a time, and cook until the rice is al dente, stirring constantly for around 20 mins.\n3. Stir through the parmesan, mascarpone and basil, and season to taste. Spoon into bowls to serve.'
 )
+
+courgette_linguine = Recipe.create(
+  name: 'Lemony courgette linguine',
+  cook_time: 15,
+  servings: 2,
+  cuisine: 'Italian',
+  image_url: 'https://img.jamieoliver.com/jamieoliver/recipe-database/55846365.jpg?tr=w-800,h-1066',
+  description: 'Fresh and lemony, easy and quick!',
+  instructions: '1. Cook the pasta in a pan of boiling salted water according to the packet instructions, then drain, reserving a mugful of cooking water. Meanwhile, slice the courgettes lengthways, then again into long matchsticks with good knife skills or using the julienne cutter on a mandolin (use the guard!).\n2. Place a large non-stick frying pan on a medium-high heat with 1 tablespoon of olive oil, then add the courgettes.
+Cook for 4 minutes, tossing regularly, while you finely slice the mint leaves, then stir them into the pan. Toss the drained pasta into the courgette pan with a splash of reserved cooking water.\n3. Finely grate in most of the Parmesan and a little lemon zest, squeeze in all the juice, toss well, then taste and season to perfection with sea salt and black pepper.\n4. Dish up, finely grate over the remaining Parmesan and drizzle with 1 teaspoon of extra virgin olive oil before tucking in.'
+)
 puts 'Recipes finished'
 
 puts 'Creating recipe_ingridients'
+RecipeIngredient.create(
+  recipe_id: raw_salad.id,
+  ingredient_id: asparagus.id,
+  quantity: 1,
+  unit: 'bunch of'
+)
+RecipeIngredient.create(
+  recipe_id: raw_salad.id,
+  ingredient_id: radish.id,
+  quantity: 1,
+  unit: 'bunch of'
+)
+RecipeIngredient.create(
+  recipe_id: raw_salad.id,
+  ingredient_id: courgette.id,
+  quantity: 4,
+  unit: 'baby'
+)
+RecipeIngredient.create(
+  recipe_id: raw_salad.id,
+  ingredient_id: basil.id,
+  quantity: 1,
+  unit: 'bunch of fresh'
+)
+RecipeIngredient.create(
+  recipe_id: raw_salad.id,
+  ingredient_id: lemon.id,
+  quantity: 1,
+  unit: 'juiced'
+)
+RecipeIngredient.create(
+  recipe_id: raw_salad.id,
+  ingredient_id: olive_oil.id,
+  quantity: 1,
+  unit: 'tbsp'
+)
+RecipeIngredient.create(
+  recipe_id: raw_salad.id,
+  ingredient_id: parmesan.id,
+  quantity: 30,
+  unit: 'g grated'
+)
+
+RecipeIngredient.create(
+  recipe_id: courgette_linguine.id,
+  ingredient_id: olive_oil.id,
+  quantity: 1,
+  unit: 'tbsp'
+)
+RecipeIngredient.create(
+  recipe_id: courgette_linguine.id,
+  ingredient_id: pasta.id,
+  quantity: 150,
+  unit: 'g linguine'
+)
+RecipeIngredient.create(
+  recipe_id: courgette_linguine.id,
+  ingredient_id: courgette.id,
+  quantity: 2,
+  unit: 'mixed-colour'
+)
+RecipeIngredient.create(
+  recipe_id: courgette_linguine.id,
+  ingredient_id: basil.id,
+  quantity: 15,
+  unit: 'g'
+)
+RecipeIngredient.create(
+  recipe_id: courgette_linguine.id,
+  ingredient_id: parmesan.id,
+  quantity: 30,
+  unit: 'g'
+)
+RecipeIngredient.create(
+  recipe_id: courgette_linguine.id,
+  ingredient_id: lemon.id,
+  quantity: 1,
+  unit: 'zest'
+)
+
 RecipeIngredient.create(
   recipe_id: summer_pasta.id,
   ingredient_id: onion.id,
