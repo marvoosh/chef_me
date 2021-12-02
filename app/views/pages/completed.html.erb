@@ -1,5 +1,9 @@
 <h1><strong>Completed Recipes</strong></h1>
-
+<style>
+h1{
+  margin-top: 5px;
+}
+</style>
 <% @completed_recipes.each do |completed_recipe| %>
     <div class="recipe-cards-container">
       <%= render 'components/card', recipe: completed_recipe.recipe, saved_recipe: completed_recipe %>
