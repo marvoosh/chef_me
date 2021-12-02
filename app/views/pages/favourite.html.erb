@@ -1,5 +1,9 @@
 <h1><strong>Favourites Recipes</strong></h1>
-
+<style>
+h1{
+  margin-top: 5px;
+}
+</style>
 <% @favourite_recipes.each do |favourite_recipe| %>
     <div class="recipe-cards-container">
       <%= render 'components/card', recipe: favourite_recipe.recipe, saved_recipe: favourite_recipe %>

@@ -1,5 +1,9 @@
 <h1><strong>Saved Recipes</strong></h1>
-
+<style>
+  h1{
+    margin-top: 5px;
+  }
+</style>
 <% @recipes.each do |recipe| %>
   <% saved_recipe = @saved_recipes.where(user_id: current_user.id, recipe_id: recipe.id)[0] %>
     <div class="recipe-cards-container">
