@@ -32,7 +32,7 @@
   </div>
   <h1 class="name"><%= @recipe.name %></h1>
   <br>
-  <center><%=image_tag @recipe.image_url, class: "image"%></center><br>
+  <center><%=image_tag @recipe.image_url, class: "image"%></center> <br>
 
   <div class="container-flex">
     <div class="container-flex-title">
@@ -57,9 +57,7 @@
     </div>
   </div>
 </div><hr>
-    <center><p><%= @recipe.description %></p></center>
 </div>
-
 <div class="row tab">
 <div style="margin: auto;">
 <button style="float:none" class="tablinks active" onclick="openCity(event, 'Ingredients')">Ingredients</button>
