@@ -16,8 +16,14 @@ h1 {
   .card-img {
     overflow: hidden;
     max-height: 200px;
-    max-width: 100%;
+    width: 100%;
+    // border: 1px solid red;
 
+    .icons {
+      // border: 1px solid blue;
+      display: flex;
+      justify-content: end;
+    }
     a {
       text-decoration: none;
     }
@@ -28,9 +34,11 @@ h1 {
       margin-right: 8px;
       margin-bottom: 8px;
     }
-
-    img {
-      width: 100%;
+    .img-container {
+      // border: 3px solid blue;
+      img {
+        width: 100%;
+      }
     }
   }
   .recipe-title {
