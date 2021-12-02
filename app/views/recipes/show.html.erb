@@ -32,7 +32,7 @@
   </div>
   <h1 class="name"><%= @recipe.name %></h1>
   <br>
-  <center><%=image_tag @recipe.image_url, class: "image"%></center><br>
+  <center><%=image_tag @recipe.image_url, class: "image"%></center> <br>
 
   <div class="container-flex">
     <div class="container-flex-title">
@@ -57,11 +57,13 @@
     </div>
   </div
 </div><hr>
+
     <p><%= @recipe.description %></p>
 <hr>
 </div>
 <br>
 <div class="container text" >
+
    <div class='social'>
     <%= social_share_button_tag('Check this recipe:', desc: @recipe.name) %>
    </div>
