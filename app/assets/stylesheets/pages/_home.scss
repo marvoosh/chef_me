@@ -14,8 +14,8 @@
 
 .banner-container {
   height: 100vh;
-  display: flex;
-  justify-content: space-around;
+  // display: flex;
+  // justify-content: space-around;
   align-items: center;
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url("jimmy-dean-fVkJv4KP-SA-unsplash.jpg");
   background-size: cover;
@@ -23,7 +23,7 @@
   margin-bottom: -180px;
   img {
     width: 300px;
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
   }
 
   h1 {
@@ -36,7 +36,7 @@
     color: #E0C097;
     font-weight: bolder;
     font-size: 25px;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: 12px;
   }
   p {

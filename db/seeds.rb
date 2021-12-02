@@ -71,7 +71,7 @@ peas = Ingredient.create(name: 'frozen peas')
 pine_nut = Ingredient.create(name: 'pine nut')
 prawn = Ingredient.create(name: 'prawn')
 pulses = Ingredient.create(name: 'pulses')
-pumpkin_seed = Ingredient.create(name: 'pumbkin seed')
+pumpkin_seed = Ingredient.create(name: 'pumpkin seed')
 red_onion = Ingredient.create(name: 'red onion')
 red_chilli = Ingredient.create(name: 'red chilli')
 salmon = Ingredient.create(name: 'salmon')
@@ -83,7 +83,7 @@ sesame = Ingredient.create(name: 'sesame seeds')
 sesame_oil = Ingredient.create(name: 'sesame oil')
 spinach = Ingredient.create(name: 'spinach')
 spring_onion = Ingredient.create(name: 'spring onion')
-sundried_tomato = Ingredient.create(name: sundried_tomato)
+sundried_tomato = Ingredient.create(name: 'sundried_tomato')
 sushi_ginger = Ingredient.create(name: 'pickled sushi ginger')
 sea_asparagus = Ingredient.create(name: 'sea asparagus')
 thai_chili = Ingredient.create(name: 'Thai chili')
@@ -215,7 +215,7 @@ ricotta_pasta = Recipe.create(
   cuisine: 'Italian',
   image_url: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-981481_11-f4ebdab.jpg?quality=90&webp=true&resize=440,400',
   description: 'Soft Italian cheeses like ricotta make a great sauce base when mixed with lemon, greens, herbs and pine nuts',
-  instructions: '1. Heat the oil in a large frying pan. Cook the shallot and courgettes for 8 mins until softened. When they are just beginning to colour, add the garlic and cook for 2 mins more.\n2. Cook the pasta following pack instructions. Drain, reserving a little of the water. Tip the pasta into the courgette pan with the basil, lemon zest, Parmesan and pine nuts. Season, dot over the ricotta and mix gently so that you don’t break it up too much. Serve sprinkled with extra Parmesan, if you like.'
+  instructions: '1. Heat the oil in a large frying pan. Cook the onion and courgettes for 8 mins until softened. When they are just beginning to colour, add the garlic and cook for 2 mins more.\n2. Cook the pasta following pack instructions. Drain, reserving a little of the water. Tip the pasta into the courgette pan with the basil, lemon zest, Parmesan and pine nuts. Season, dot over the ricotta and mix gently so that you don’t break it up too much. Serve sprinkled with extra Parmesan, if you like.'
 )
 
  vodka_pasta = Recipe.create(
