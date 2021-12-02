@@ -33,6 +33,7 @@
   <h1 class="name"><%= @recipe.name %></h1>
   <br>
   <center><%=image_tag @recipe.image_url, class: "image"%></center><br>
+
   <div class="container-flex">
     <div class="container-flex-title">
       <div class="title">
@@ -54,8 +55,10 @@
         Servings</div>
       <center><%= @recipe.servings %></center>
     </div>
-  </div> <hr>
-</div>
+  </div
+</div><hr>
+    <p><%= @recipe.description %></p>
+<hr>
 </div>
 <br>
 <div class="container text" >
